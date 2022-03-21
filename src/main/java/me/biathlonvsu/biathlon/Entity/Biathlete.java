@@ -1,7 +1,7 @@
 package me.biathlonvsu.biathlon.Entity;
 
 
-import lombok.Builder;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

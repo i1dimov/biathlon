@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface BiathleteRepository extends CrudRepository<Biathlete, Long> {
+public interface BiathleteRepository extends CrudRepository<Biathlete, Integer> {
 
 }

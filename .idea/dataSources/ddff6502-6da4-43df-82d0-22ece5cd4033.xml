@@ -1744,7 +1744,7 @@
     </column>
     <column id="546" parent="205" name="PASSWORD">
       <Position>3</Position>
-      <DataType>VARCHAR|0s</DataType>
+      <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="547" parent="205" name="NAME">

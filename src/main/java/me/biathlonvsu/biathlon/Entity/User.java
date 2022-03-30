@@ -1,21 +1,23 @@
 package me.biathlonvsu.biathlon.Entity;
 
 
-import lombok.Builder;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+
 import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
+
+import javax.persistence.*;
 import java.util.Set;
 
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor
 @Table("USER")
+@Entity
 public class User {
 
     @Id
@@ -26,14 +28,20 @@ public class User {
     private String login;
 
     @Column(value = "PASSWORD")
-    private String password;
+    private int password;
 
     @Column(value = "NAME")
     private String name;
 
-    @MappedCollection(idColumn = "ID")
+    @ManyToMany
+    @JoinTable(name = "BIATHLETE_SUBSCRIPTION", joinColumns = @JoinColumn(name = "userId"),
+              inverseJoinColumns = @JoinColumn(name = "biathleteId"))
     private Set<Biathlete> biathletes;
 
-    @MappedCollection(idColumn = "ID")
+    //@MappedCollection(idColumn = "ID")
+    //@ManyToMany(mappedBy = "ID", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinTable(name = "COMPETITION_SUBSCRIPTION", joinColumns = @JoinColumn(name = "userId"),
+            inverseJoinColumns = @JoinColumn(name = "competitionId"))
     private Set<Competition> competitions;
 }

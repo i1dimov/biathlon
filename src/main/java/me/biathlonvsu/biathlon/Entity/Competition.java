@@ -1,23 +1,22 @@
 package me.biathlonvsu.biathlon.Entity;
 
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 import javax.persistence.*;
 
 import java.util.Date;
-import java.util.Map;
+import java.util.Set;
 
 
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor
 @Table("COMPETITION")
+@Entity
 public class Competition {
 
     @Id
@@ -33,9 +32,12 @@ public class Competition {
     @Column(value = "LOCATION")
     private String location;
 
-    @ElementCollection
+    /*@ElementCollection
     @CollectionTable(name = "COMPETITION_RESULT", joinColumns = {@JoinColumn(name = "competitionId")})
     @MapKeyColumn(name = "biathleteId")
-    private Map<Biathlete, Integer> result;
+    private Map<Biathlete, Integer> result;*/
+
+    @OneToMany(mappedBy = "competition")
+    Set<CompetitionResult> competitionResults;
 
 }

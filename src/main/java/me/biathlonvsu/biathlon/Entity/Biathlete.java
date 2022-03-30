@@ -6,17 +6,23 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import org.springframework.data.annotation.Id;
+
+import me.biathlonvsu.biathlon.SupportingTools.Gender;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Date;
+import java.util.Set;
 
 
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor
 @Table("BIATHLETE")
+@Entity
 public class Biathlete {
 
     @Id
@@ -35,11 +41,9 @@ public class Biathlete {
     @Column(value = "GENDER")
     private Gender gender;
 
-}
+    @OneToMany(mappedBy = "biathlete")
+    Set<CompetitionResult> competitionResults;
 
-enum Gender {
-    MAN,
-    WOMAN
 }
 
 

@@ -300,7 +300,7 @@
       <ObjectId>10</ObjectId>
     </table>
     <table id="202" parent="4" name="COMPETITION">
-      <ObjectId>27</ObjectId>
+      <ObjectId>5</ObjectId>
     </table>
     <table id="203" parent="4" name="COMPETITION_RESULT">
       <ObjectId>9</ObjectId>
@@ -1638,44 +1638,49 @@
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="530" parent="202" name="COMPETITION_RESULT_COMPETITION_ID_FK_INDEX_8">
-      <ObjectId>28</ObjectId>
+    <column id="530" parent="202" name="ABOUT">
+      <Position>5</Position>
+      <DataType>TEXT|0s</DataType>
+      <DefaultExpression>STRINGDECODE(&apos;\u0421\u043a\u043e\u0440\u043e \u043c\u044b \u0434\u043e\u0431\u0430\u0432\u0438\u043c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043e \u0441\u043e\u0440\u0435\u0432\u043d\u043e\u0432\u0430\u043d\u0438\u0438&apos;)</DefaultExpression>
+    </column>
+    <index id="531" parent="202" name="COMPETITION_RESULT_COMPETITION_ID_FK_INDEX_8">
+      <ObjectId>14</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>107</SourceTextLength>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <column id="531" parent="203" name="biathleteId">
+    <column id="532" parent="203" name="biathleteId">
       <Position>1</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="532" parent="203" name="competitionId">
+    <column id="533" parent="203" name="competitionId">
       <Position>2</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="533" parent="203" name="SCORE">
+    <column id="534" parent="203" name="SCORE">
       <Position>3</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="534" parent="203" name="COMPETITION_RESULT_BIATHLETE_ID_FK_INDEX_B">
+    <index id="535" parent="203" name="COMPETITION_RESULT_BIATHLETE_ID_FK_INDEX_B">
       <ObjectId>18</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>114</SourceTextLength>
       <ColNames>biathleteId</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="535" parent="203" name="COMPETITION_RESULT_COMPETITION_ID_FK_INDEX_B">
+    <index id="536" parent="203" name="COMPETITION_RESULT_COMPETITION_ID_FK_INDEX_B">
       <ObjectId>20</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>118</SourceTextLength>
       <ColNames>competitionId</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <foreign-key id="536" parent="203" name="COMPETITION_RESULT_BIATHLETE_ID_FK">
+    <foreign-key id="537" parent="203" name="COMPETITION_RESULT_BIATHLETE_ID_FK">
       <ColNames>biathleteId</ColNames>
       <RefTableName>BIATHLETE</RefTableName>
       <RefKeyName>BIATHLETE_SUBSCRIPTION_BIATHLETE_ID_FK_INDEX_A</RefKeyName>
@@ -1683,7 +1688,7 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <foreign-key id="537" parent="203" name="COMPETITION_RESULT_COMPETITION_ID_FK">
+    <foreign-key id="538" parent="203" name="COMPETITION_RESULT_COMPETITION_ID_FK">
       <ColNames>competitionId</ColNames>
       <RefTableName>COMPETITION</RefTableName>
       <RefKeyName>COMPETITION_RESULT_COMPETITION_ID_FK_INDEX_8</RefKeyName>
@@ -1691,31 +1696,31 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="538" parent="204" name="userId">
+    <column id="539" parent="204" name="userId">
       <Position>1</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="539" parent="204" name="competitionId">
+    <column id="540" parent="204" name="competitionId">
       <Position>2</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="540" parent="204" name="COMPETITION_SUBSCRIPTION_USER_ID_FK_INDEX_A">
+    <index id="541" parent="204" name="COMPETITION_SUBSCRIPTION_USER_ID_FK_INDEX_A">
       <ObjectId>25</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>116</SourceTextLength>
       <ColNames>userId</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="541" parent="204" name="COMPETITION_SUBSCRIPTION_COMPETITION_ID_FK_INDEX_A">
+    <index id="542" parent="204" name="COMPETITION_SUBSCRIPTION_COMPETITION_ID_FK_INDEX_A">
       <ObjectId>23</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>130</SourceTextLength>
       <ColNames>competitionId</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <foreign-key id="542" parent="204" name="COMPETITION_SUBSCRIPTION_USER_ID_FK">
+    <foreign-key id="543" parent="204" name="COMPETITION_SUBSCRIPTION_USER_ID_FK">
       <ColNames>userId</ColNames>
       <RefTableName>USER</RefTableName>
       <RefKeyName>BIATHLETE_SUBSCRIPTION_USER_ID_FK_INDEX_2</RefKeyName>
@@ -1723,7 +1728,7 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <foreign-key id="543" parent="204" name="COMPETITION_SUBSCRIPTION_COMPETITION_ID_FK">
+    <foreign-key id="544" parent="204" name="COMPETITION_SUBSCRIPTION_COMPETITION_ID_FK">
       <ColNames>competitionId</ColNames>
       <RefTableName>COMPETITION</RefTableName>
       <RefKeyName>COMPETITION_RESULT_COMPETITION_ID_FK_INDEX_8</RefKeyName>
@@ -1731,28 +1736,28 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="544" parent="205" name="ID">
+    <column id="545" parent="205" name="ID">
       <Position>1</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="545" parent="205" name="LOGIN">
+    <column id="546" parent="205" name="LOGIN">
       <Position>2</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="546" parent="205" name="PASSWORD">
+    <column id="547" parent="205" name="PASSWORD">
       <Position>3</Position>
       <DataType>INT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="547" parent="205" name="NAME">
+    <column id="548" parent="205" name="NAME">
       <Position>4</Position>
       <DataType>VARCHAR|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="548" parent="205" name="BIATHLETE_SUBSCRIPTION_USER_ID_FK_INDEX_2">
+    <index id="549" parent="205" name="BIATHLETE_SUBSCRIPTION_USER_ID_FK_INDEX_2">
       <ObjectId>15</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>97</SourceTextLength>

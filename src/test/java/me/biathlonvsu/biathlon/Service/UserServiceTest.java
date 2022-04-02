@@ -130,12 +130,12 @@ class UserServiceTest {
     @Test
     void logIn() {
         createMockito();
-        int id = userService.logIn("admin", "11");
-        assertEquals(id,2);
-        int id2 = userService.logIn("admin", "12");
-        assertEquals(id2,-1);
-        int id3 = userService.logIn("admi", "11");
-        assertEquals(id3,-1);
+        User user = userService.logIn("admin", "11");
+        assertEquals(user.getId(),2);
+        User user2 = userService.logIn("admin", "12");
+        assertNull(user2);
+        User user3 = userService.logIn("admi", "11");
+        assertNull(user3);
     }
 
     @Test

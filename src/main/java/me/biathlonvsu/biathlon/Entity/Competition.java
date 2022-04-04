@@ -32,11 +32,6 @@ public class Competition {
     @Column(value = "LOCATION")
     private String location;
 
-    /*@ElementCollection
-    @CollectionTable(name = "COMPETITION_RESULT", joinColumns = {@JoinColumn(name = "competitionId")})
-    @MapKeyColumn(name = "biathleteId")
-    private Map<Biathlete, Integer> result;*/
-
     @OneToMany(mappedBy = "competition")
     Set<CompetitionResult> competitionResults;
 

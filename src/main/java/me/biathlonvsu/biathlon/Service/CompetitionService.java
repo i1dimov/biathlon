@@ -16,7 +16,7 @@ public class CompetitionService {
 
     public Set<Competition> getAllCompetitions(){
         return competitionRepository.findAll();
-    }
+    }//TODO сортировка по дате
 
     public Competition getCompetitionById(int id){
         Optional<Competition> competition = competitionRepository.findById(id);

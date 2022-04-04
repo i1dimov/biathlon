@@ -1,7 +1,5 @@
 package me.biathlonvsu.biathlon.Entity;
 
-import me.biathlonvsu.biathlon.Repository.BiathleteRepository;
-import me.biathlonvsu.biathlon.Repository.CompetitionRepository;
 import me.biathlonvsu.biathlon.Repository.UserRepository;
 import me.biathlonvsu.biathlon.SupportingTools.Gender;
 import org.junit.jupiter.api.Test;
@@ -35,6 +33,7 @@ class UserTest {
         biathlete.setSecondName("Фуркад");
         biathlete.setGender(Gender.MAN);
         biathlete.setBirthDate(new Date(1988, 9, 14));
+        biathlete.setCompetitionResults(new HashSet<CompetitionResult>());
         entityManager.persist(biathlete);
         entityManager.flush();
 

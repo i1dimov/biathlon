@@ -47,6 +47,7 @@ class UserServiceTest {
     @Test
     void subscribeToBiathlete() {
         createMockito();
+        createTestCompetitionResult();
         boolean tr = userService.subscribeToBiathlete(user.getId(), biathlete.getId());
         assertTrue(tr);
         assertEquals(userRepository.findById(user.getId()).get().getBiathletes().stream().findFirst().get().getId(), biathlete.getId());
@@ -71,6 +72,7 @@ class UserServiceTest {
     @Test
     void unsubscribeFromBiathlete() {
         createMockito();
+        createTestCompetitionResult();
         userService.subscribeToBiathlete(user.getId(), biathlete.getId());
         boolean tr = userService.unsubscribeFromBiathlete(user.getId(), biathlete.getId());
         assertTrue(tr);
@@ -177,6 +179,7 @@ class UserServiceTest {
         biathlete.setSecondName("Фуркад");
         biathlete.setGender(Gender.MAN);
         biathlete.setBirthDate(new Date(88, 9, 14));
+        biathlete.setCompetitionResults(new HashSet<>());
         return biathlete;
     }
 

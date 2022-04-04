@@ -1,9 +1,7 @@
 package me.biathlonvsu.biathlon.Service;
 
 import me.biathlonvsu.biathlon.Entity.Biathlete;
-import me.biathlonvsu.biathlon.Entity.Competition;
 import me.biathlonvsu.biathlon.Repository.BiathleteRepository;
-import me.biathlonvsu.biathlon.Repository.CompetitionRepository;
 import me.biathlonvsu.biathlon.SupportingTools.Gender;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,7 +17,6 @@ import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 @ExtendWith(SpringExtension.class)

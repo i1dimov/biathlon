@@ -100,10 +100,10 @@ class UserServiceTest {
     void getAllSubscribeCompetition() {
         createMockito();
         userService.subscribeToCompetition(user.getId(), competition.getId());
-        Set<Competition> competitions = userService.getAllSubscribeCompetition(user.getId());
+        Set<Competition> competitions = userService.getAllSubscribeCompetitions(user.getId());
         assertEquals(competitions.size(), 1);
         assertEquals(competitions.stream().findFirst().get().getId(), competition.getId());
-        Set<Competition> nl = userService.getAllSubscribeCompetition(-1);
+        Set<Competition> nl = userService.getAllSubscribeCompetitions(-1);
         assertNull(nl);
     }
 
@@ -113,10 +113,10 @@ class UserServiceTest {
         userService.subscribeToBiathlete(user.getId(), biathlete.getId());
         userService.subscribeToCompetition(user.getId(), competition.getId());
         createTestCompetitionResult();
-        Set<Competition> competitions = userService.getAllCompetitionSubscribeWithBiathletes(2);
+        Set<Competition> competitions = userService.getAllCompetitionsSubscribeWithBiathletes(2);
         assertEquals(competitions.size(), 1);
         assertEquals(competitions.stream().findFirst().get().getId(), competition.getId());
-        Set<Competition> nl = userService.getAllSubscribeCompetition(-1);
+        Set<Competition> nl = userService.getAllSubscribeCompetitions(-1);
         assertNull(nl);
     }
 

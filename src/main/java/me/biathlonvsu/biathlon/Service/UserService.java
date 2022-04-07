@@ -55,13 +55,13 @@ public class UserService {
         } else return false;
     }
 
-    public Set<Competition> getAllSubscribeCompetition(int userId){
+    public Set<Competition> getAllSubscribeCompetitions(int userId){
         boolean b = userRepository.findById(userId).isPresent();
         if (b) return userRepository.findById(userId).get().getCompetitions();
         else return null;
     }
 
-    public Set<Competition> getAllCompetitionSubscribeWithBiathletes(int userId){
+    public Set<Competition> getAllCompetitionsSubscribeWithBiathletes(int userId){
         Set<Competition> competitions = new HashSet<>();
         Optional<User> user = userRepository.findById(userId);
         if (user.isEmpty()) return null;

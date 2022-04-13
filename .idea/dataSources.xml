@@ -7,5 +7,12 @@
       <jdbc-driver>org.h2.Driver</jdbc-driver>
       <jdbc-url>jdbc:h2:D:\my work\TP\biathlon\DataBase/default</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="default@localhost" uuid="fbb05e27-ce19-4995-b834-d1892fc7201e">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/default</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

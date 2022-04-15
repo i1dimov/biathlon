@@ -10,7 +10,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="biathlon" />
-          <factory-entry name="entityManagerFactory" value="ddff6502-6da4-43df-82d0-22ece5cd4033" />
+          <factory-entry name="entityManagerFactory" value="007306fa-fed2-4cfc-8b05-df9fd1911469" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

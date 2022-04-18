@@ -65,27 +65,27 @@ public class UserService {
         Set<Competition> competitions = new HashSet<>();
         Optional<User> user = userRepository.findById(userId);
         if (user.isEmpty()) return null;
-        user.get().getBiathletes().forEach(biathlete -> biathlete.getCompetitionResults().
-                forEach(competitionResult -> competitions.add(competitionResult.getCompetition())));
+        //user.get().getBiathletes().forEach(biathlete -> biathlete.getCompetitionResults().
+        //        forEach(competitionResult -> competitions.add(competitionResult.getCompetition())));
         return competitions;
     }//мы берем у каждого биатлониста(на которого подписан юзер) его участие в соревновании отдаем сет с этими соревнованиями
 
-    public User register(String login, String password, String name){
+    public User register(String login, int password, String name){
         if (userRepository.findByLogin(login).isPresent()) return null;
         User user = new User();
         user.setLogin(login);
         user.setName(name);
-        user.setPassword(password.hashCode());
+        user.setPassword(password);
         //user.setCompetitions();
         //user.setBiathletes();
         userRepository.save(user);
         return user;
     }
 
-    public User logIn(String login, String password){
+    public User logIn(String login, int password){
         Optional<User> user = userRepository.findByLogin(login);
         if (user.isPresent()) {
-            if (user.get().getPassword() == password.hashCode()) return user.get();
+            if (user.get().getPassword() == password) return user.get();
         }
         return null;
     }

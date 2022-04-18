@@ -2,18 +2,17 @@ package me.biathlonvsu.biathlon.Entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
 import me.biathlonvsu.biathlon.SupportingTools.Gender;
-import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
@@ -27,25 +26,29 @@ import java.util.Set;
 public class Biathlete {
 
     @Id
-    @Column(value = "ID")
+    @Column(name = "BIATHLETE_ID")
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(value = "NAME")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(value = "secondName")
+    @Column(name = "SECOND_NAME")
     private String secondName;
 
-    @Column(value = "birthDate")
+    @Column(name = "BIRTH_DATE")
     private Date birthDate;
 
-    @Column(value = "GENDER")
+    @Column(name = "GENDER")
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     @OneToMany(mappedBy = "biathlete")
+    //@JsonBackReference
     Set<CompetitionResult> competitionResults;
 
-    private int scoreInLastSeason;
+    @Transient
+    int scoreInLastSeason;
 
     public void recalculationScore(){
         scoreInLastSeason = 0;
@@ -72,6 +75,7 @@ public class Biathlete {
         return scoreInLastSeason;
     }
 
+    //TODO подсчет очков в последнем сезоне
 }
 
 

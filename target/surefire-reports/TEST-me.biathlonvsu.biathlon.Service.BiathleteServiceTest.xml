@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="me.biathlonvsu.biathlon.Service.CompetitionServiceTest" time="0.08" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="me.biathlonvsu.biathlon.Service.BiathleteServiceTest" time="0.173" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -59,6 +59,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="56.0"/>
   </properties>
-  <testcase name="getAllCompetitions" classname="me.biathlonvsu.biathlon.Service.CompetitionServiceTest" time="0.011"/>
-  <testcase name="getCompetitionById" classname="me.biathlonvsu.biathlon.Service.CompetitionServiceTest" time="0.005"/>
+  <testcase name="getAllBiathletes" classname="me.biathlonvsu.biathlon.Service.BiathleteServiceTest" time="0.045"/>
+  <testcase name="getBiathleteById" classname="me.biathlonvsu.biathlon.Service.BiathleteServiceTest" time="0.005"/>
 </testsuite>

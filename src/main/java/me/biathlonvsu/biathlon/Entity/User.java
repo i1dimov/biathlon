@@ -21,7 +21,8 @@ import java.util.Set;
 public class User {
 
     @Id
-    @Column(value = "ID")
+    @Column(value = "USER_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(value = "LOGIN")
@@ -34,14 +35,14 @@ public class User {
     private String name;
 
     @ManyToMany
-    @JoinTable(name = "BIATHLETE_SUBSCRIPTION", joinColumns = @JoinColumn(name = "userId"),
-              inverseJoinColumns = @JoinColumn(name = "biathleteId"))
+    @JoinTable(name = "BIATHLETE_SUBSCRIPTION", joinColumns = @JoinColumn(name = "USER_ID"),
+              inverseJoinColumns = @JoinColumn(name = "BIATHLETE_ID"))
     private Set<Biathlete> biathletes;
 
     //@MappedCollection(idColumn = "ID")
     //@ManyToMany(mappedBy = "ID", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ManyToMany
-    @JoinTable(name = "COMPETITION_SUBSCRIPTION", joinColumns = @JoinColumn(name = "userId"),
-            inverseJoinColumns = @JoinColumn(name = "competitionId"))
+    @JoinTable(name = "COMPETITION_SUBSCRIPTION", joinColumns = @JoinColumn(name = "USER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "COMPETITION_ID"))
     private Set<Competition> competitions;
 }

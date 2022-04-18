@@ -1,5 +1,8 @@
 package me.biathlonvsu.biathlon.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -10,7 +13,7 @@ import javax.persistence.*;
 
 
 @Data
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"biathlete", "competition"})
 @NoArgsConstructor
 @Entity
 public class CompetitionResult {
@@ -18,16 +21,33 @@ public class CompetitionResult {
     @EmbeddedId
     CompetitionResultKey id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("biathleteId")
-    @JoinColumn(name = "biathleteId", table = "COMPETITION_RESULT")
+    @JoinColumn(name = "BIATHLETE_ID")
+    @JsonIgnore
     Biathlete biathlete;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("competitionId")
-    @JoinColumn(name = "competitionId", table = "COMPETITION_RESULT")
+    @JoinColumn(name = "COMPETITION_ID")
+    @JsonIgnore
     Competition competition;
+
+    @Transient
+    String biathleteName;
+
+    @Transient
+    String competitionName;
 
     int score;
 
+    public String getBiathleteName() {
+        biathleteName = biathlete.getName() + biathlete.getSecondName();
+        return biathleteName;
+    }
+
+    public String getCompetitionName() {
+        competitionName = competition.getName();
+        return competitionName;
+    }
 }

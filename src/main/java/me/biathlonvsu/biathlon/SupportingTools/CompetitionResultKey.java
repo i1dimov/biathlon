@@ -17,10 +17,10 @@ import java.io.Serializable;
 @Embeddable
 public class CompetitionResultKey implements Serializable {
 
-    @Column(name = "biathleteId", table = "COMPETITION_RESULT")
+    @Column(name = "BIATHLETE_ID")
     int biathleteId;
 
-    @Column(name = "competitionId", table = "COMPETITION_RESULT")
+    @Column(name = "COMPETITION_ID")
     int competitionId;
 
 }

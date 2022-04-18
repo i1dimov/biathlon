@@ -1,10 +1,12 @@
 package me.biathlonvsu.biathlon.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.relational.core.mapping.Column;
+
 import org.springframework.data.relational.core.mapping.Table;
 import javax.persistence.*;
 
@@ -20,19 +22,20 @@ import java.util.Set;
 public class Competition {
 
     @Id
-    @Column(value = "ID")
+    @Column(name = "COMPETITION_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(value = "NAME")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(value = "DATA")
+    @Column(name = "DATE")
     private Date date;
 
-    @Column(value = "LOCATION")
+    @Column(name = "LOCATION")
     private String location;
 
     @OneToMany(mappedBy = "competition")
+    //@JsonBackReference
     Set<CompetitionResult> competitionResults;
-
 }

@@ -33,7 +33,7 @@ class UserTest {
         biathlete.setSecondName("Фуркад");
         biathlete.setGender(Gender.MAN);
         biathlete.setBirthDate(new Date(1988, 9, 14));
-        biathlete.setCompetitionResults(new HashSet<CompetitionResult>());
+        //biathlete.setCompetitionResults(new HashSet<CompetitionResult>());
         entityManager.persist(biathlete);
         entityManager.flush();
 

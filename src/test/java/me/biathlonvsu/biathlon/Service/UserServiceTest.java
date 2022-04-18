@@ -123,20 +123,20 @@ class UserServiceTest {
     @Test
     void register() {
         createMockito();
-        User user = userService.register("cap4ick", "11", "Сергей");
+        User user = userService.register("cap4ick", "11".hashCode(), "Сергей");
         assertEquals(user.getName(),"Сергей");
-        User nl = userService.register("admin", "11", "Сергей");
+        User nl = userService.register("admin", "11".hashCode(), "Сергей");
         assertNull(nl);
     }
 
     @Test
     void logIn() {
         createMockito();
-        User user = userService.logIn("admin", "11");
+        User user = userService.logIn("admin", "11".hashCode());
         assertEquals(user.getId(),2);
-        User user2 = userService.logIn("admin", "12");
+        User user2 = userService.logIn("admin", "12".hashCode());
         assertNull(user2);
-        User user3 = userService.logIn("admi", "11");
+        User user3 = userService.logIn("admi", "11".hashCode());
         assertNull(user3);
     }
 
@@ -179,7 +179,7 @@ class UserServiceTest {
         biathlete.setSecondName("Фуркад");
         biathlete.setGender(Gender.MAN);
         biathlete.setBirthDate(new Date(88, 9, 14));
-        biathlete.setCompetitionResults(new HashSet<>());
+        //biathlete.setCompetitionResults(new HashSet<>());
         return biathlete;
     }
 
@@ -203,8 +203,8 @@ class UserServiceTest {
         competitionResult.setCompetition(createTestCompetition());
         HashSet<CompetitionResult> competitionResults = new HashSet<>();
         competitionResults.add(competitionResult);
-        competition.setCompetitionResults(competitionResults);
-        biathlete.setCompetitionResults(competitionResults);
+        //competition.setCompetitionResults(competitionResults);
+        //biathlete.setCompetitionResults(competitionResults);
         return competitionResult;
     }
 }

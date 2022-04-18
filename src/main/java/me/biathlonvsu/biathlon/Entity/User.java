@@ -39,8 +39,6 @@ public class User {
               inverseJoinColumns = @JoinColumn(name = "BIATHLETE_ID"))
     private Set<Biathlete> biathletes;
 
-    //@MappedCollection(idColumn = "ID")
-    //@ManyToMany(mappedBy = "ID", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ManyToMany
     @JoinTable(name = "COMPETITION_SUBSCRIPTION", joinColumns = @JoinColumn(name = "USER_ID"),
             inverseJoinColumns = @JoinColumn(name = "COMPETITION_ID"))

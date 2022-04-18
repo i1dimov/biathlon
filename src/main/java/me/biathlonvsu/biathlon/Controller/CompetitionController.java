@@ -4,7 +4,6 @@ package me.biathlonvsu.biathlon.Controller;
 import lombok.RequiredArgsConstructor;
 import me.biathlonvsu.biathlon.Entity.Competition;
 import me.biathlonvsu.biathlon.Service.CompetitionService;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

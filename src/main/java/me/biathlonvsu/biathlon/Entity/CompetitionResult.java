@@ -42,7 +42,7 @@ public class CompetitionResult {
     int score;
 
     public String getBiathleteName() {
-        biathleteName = biathlete.getName() + biathlete.getSecondName();
+        biathleteName = biathlete.getName() + " " + biathlete.getSecondName();
         return biathleteName;
     }
 

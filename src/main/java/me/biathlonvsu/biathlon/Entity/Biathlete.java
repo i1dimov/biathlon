@@ -1,9 +1,5 @@
 package me.biathlonvsu.biathlon.Entity;
 
-
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -27,7 +23,6 @@ public class Biathlete {
 
     @Id
     @Column(name = "BIATHLETE_ID")
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "NAME")
@@ -74,8 +69,6 @@ public class Biathlete {
         recalculationScore();
         return scoreInLastSeason;
     }
-
-    //TODO подсчет очков в последнем сезоне
 }
 
 

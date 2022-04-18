@@ -10,5 +10,8 @@ D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\Repository\Competit
 D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\Entity\Biathlete.java
 D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\Service\CompetitionService.java
 D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\BiathlonApplication.java
+D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\Controller\UserController.java
+D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\Controller\BiathleteController.java
+D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\Controller\CompetitionController.java
 D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\Service\BiathleteService.java
 D:\my work\TP\biathlon\src\main\java\me\biathlonvsu\biathlon\SupportingTools\Gender.java

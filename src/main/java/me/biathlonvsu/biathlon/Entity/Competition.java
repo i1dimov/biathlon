@@ -23,7 +23,6 @@ public class Competition {
 
     @Id
     @Column(name = "COMPETITION_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "NAME")
@@ -36,6 +35,5 @@ public class Competition {
     private String location;
 
     @OneToMany(mappedBy = "competition")
-    //@JsonBackReference
     Set<CompetitionResult> competitionResults;
 }

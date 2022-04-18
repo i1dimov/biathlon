@@ -179,7 +179,7 @@ class UserServiceTest {
         biathlete.setSecondName("Фуркад");
         biathlete.setGender(Gender.MAN);
         biathlete.setBirthDate(new Date(88, 9, 14));
-        //biathlete.setCompetitionResults(new HashSet<>());
+        biathlete.setCompetitionResults(new HashSet<>());
         return biathlete;
     }
 
@@ -204,7 +204,7 @@ class UserServiceTest {
         HashSet<CompetitionResult> competitionResults = new HashSet<>();
         competitionResults.add(competitionResult);
         //competition.setCompetitionResults(competitionResults);
-        //biathlete.setCompetitionResults(competitionResults);
+        biathlete.setCompetitionResults(competitionResults);
         return competitionResult;
     }
 }

@@ -37,7 +37,7 @@ class BiathleteServiceTest {
         biathlete.setSecondName("Фуркад");
         biathlete.setGender(Gender.MAN);
         biathlete.setBirthDate(new Date(88, 9, 14));
-        //biathlete.setCompetitionResults(new HashSet<>());
+        biathlete.setCompetitionResults(new HashSet<>());
         return biathlete;
     }
 

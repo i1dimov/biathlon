@@ -19,7 +19,7 @@ public class UserController {
     @GetMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user){
         return ResponseEntity.ok(userService.register(user.getLogin(), user.getPassword(), user.getName()));
-    }//TODO postrequsts
+    }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
     @GetMapping("/login")
@@ -31,7 +31,7 @@ public class UserController {
     @GetMapping("/changePassword")
     public ResponseEntity<Boolean> changeUserPassword(@RequestParam int userId, @RequestParam String newPassword){
         return ResponseEntity.ok(userService.changePassword(userId, newPassword));
-    }//TODO requst params ttp://localhost:8080/spring-mvc-basics/api/foos?id=abc
+    }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
     @GetMapping("/subscribeToBiathlete")

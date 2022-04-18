@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: me.biathlonvsu.biathlon.Entity.UserTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.027 s - in me.biathlonvsu.biathlon.Entity.UserTest
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.954 s <<< FAILURE! - in me.biathlonvsu.biathlon.Entity.UserTest
+getAndSetUserBiathletes  Time elapsed: 0.032 s  <<< ERROR!
+javax.persistence.PersistenceException: org.hibernate.PersistentObjectException: detached entity passed to persist: me.biathlonvsu.biathlon.Entity.User
+	at me.biathlonvsu.biathlon.Entity.UserTest.getAndSetUserBiathletes(UserTest.java:53)
+Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: me.biathlonvsu.biathlon.Entity.User
+	at me.biathlonvsu.biathlon.Entity.UserTest.getAndSetUserBiathletes(UserTest.java:53)
+

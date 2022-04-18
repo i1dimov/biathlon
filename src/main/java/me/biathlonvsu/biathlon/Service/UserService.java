@@ -65,8 +65,8 @@ public class UserService {
         Set<Competition> competitions = new HashSet<>();
         Optional<User> user = userRepository.findById(userId);
         if (user.isEmpty()) return null;
-        //user.get().getBiathletes().forEach(biathlete -> biathlete.getCompetitionResults().
-        //        forEach(competitionResult -> competitions.add(competitionResult.getCompetition())));
+        user.get().getBiathletes().forEach(biathlete -> biathlete.getCompetitionResults().
+                forEach(competitionResult -> competitions.add(competitionResult.getCompetition())));
         return competitions;
     }//мы берем у каждого биатлониста(на которого подписан юзер) его участие в соревновании отдаем сет с этими соревнованиями
 
@@ -76,8 +76,6 @@ public class UserService {
         user.setLogin(login);
         user.setName(name);
         user.setPassword(password);
-        //user.setCompetitions();
-        //user.setBiathletes();
         userRepository.save(user);
         return user;
     }

@@ -26,10 +26,4 @@ public class CompetitionController {
     public ResponseEntity<Set<Competition>> fetchCompetitions() {
         return ResponseEntity.ok(competitionService.getAllCompetitions());
     }
-
-    @CrossOrigin(origins = "http://localhost:63342")
-    @GetMapping("biathlon/front/")
-    public ResponseEntity<Set<Competition>> fetchHome() {
-        return ResponseEntity.ok(competitionService.getAllCompetitions());
-    }
 }

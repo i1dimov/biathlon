@@ -547,12 +547,14 @@
   text-transform:none;
 }
 #u13 {
-  border-width:0px;
   position:absolute;
   left:590px;
   top:651px;
   width:700px;
   height:398px;
+  border: 1px solid;
+  alignment: center;
+
 }
 #u14_img {
   border-width:0px;

@@ -46,6 +46,30 @@
     </script>
   </head>
   <body>
+  <!-- Table style -->
+  <style>
+    table{
+      position:absolute;
+      top:600px;
+      left:600px;
+      width:700px;
+      height:400px;
+      alignment: center;
+    }
+    td{
+      border: 1px solid #dddddd;
+      padding: 5px;
+      background: white;
+    }
+    th{
+      border: 1px solid #62666b;
+      background-color: white;
+      padding: 5px;
+      font-weight: bold;
+    }
+  </style>
+
+
     <div id="base" class="">
 
       <!-- Unnamed (Image) -->
@@ -56,13 +80,13 @@
         </div>
       </div>
 
-      <!-- Search for athlete (Text Field) -->
+      <!-- Search for competition (Text Field) -->
       <div id="u52" class="ax_default text_field" data-label="Search for athlete">
         <div id="u52_div" class=""></div>
         <input id="u52_input" type="text" value="Search for Competition" class="u52_input"/>
       </div>
 
-      <!-- Unnamed (Droplist) -->
+      <!-- Season (Droplist) -->
       <div id="u53" class="ax_default droplist">
         <div id="u53_div" class=""></div>
         <select id="u53_input" class="u53_input">
@@ -75,7 +99,7 @@
         </select>
       </div>
 
-      <!-- Unnamed (Rectangle) -->
+      <!-- Season (Rectangle) -->
       <div id="u54" class="ax_default label">
         <div id="u54_div" class=""></div>
         <div id="u54_text" class="text ">
@@ -83,7 +107,7 @@
         </div>
       </div>
 
-      <!-- Unnamed (Droplist) -->
+      <!-- Athletes (Droplist) -->
       <div id="u55" class="ax_default droplist">
         <div id="u55_div" class=""></div>
         <select id="u55_input" class="u55_input">
@@ -102,177 +126,22 @@
         </div>
       </div>
 
-      <!-- Unnamed (Table) -->
-      <div id="u57" class="ax_default">
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u58" class="ax_default table_cell">
-          <img id="u58_img" class="img " src="images/competitions/u58.png"/>
-          <div id="u58_text" class="text ">
-            <p><span>Date</span></p>
+      <script src ="files/competitions/fetch.js"></script>
+      <!-- Competitions table -->
+      <div>
+        <table>
+          <div>
+            <tr class = "bg-info">
+              <th >Date</th>
+              <th>Competition</th>
+              <th>Location</th>
+            </tr>
+            <tbody id = "CompetitionsTable">
+            </tbody>
           </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u59" class="ax_default table_cell">
-          <img id="u59_img" class="img " src="images/competitions/u59.png"/>
-          <div id="u59_text" class="text ">
-            <p><span>Event</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u60" class="ax_default table_cell">
-          <img id="u60_img" class="img " src="images/competitions/u60.png"/>
-          <div id="u60_text" class="text ">
-            <p><span>Location</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u61" class="ax_default table_cell">
-          <img id="u61_img" class="img " src="images/competitions/u61.png"/>
-          <div id="u61_text" class="text ">
-            <p><span>3-6 марта</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u62" class="ax_default table_cell">
-          <img id="u62_img" class="img " src="images/competitions/u62.png"/>
-          <div id="u62_text" class="text ">
-            <p><span>8 этап Кубок мира</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u63" class="ax_default table_cell">
-          <img id="u63_img" class="img " src="images/competitions/u63.png"/>
-          <div id="u63_text" class="text ">
-            <p><span>Финляндия</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u64" class="ax_default table_cell">
-          <img id="u64_img" class="img " src="images/competitions/u64.png"/>
-          <div id="u64_text" class="text ">
-            <p><span>10-13 марта</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u65" class="ax_default table_cell">
-          <img id="u65_img" class="img " src="images/competitions/u65.png"/>
-          <div id="u65_text" class="text ">
-            <p><span>9 этап Кубок мира</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u66" class="ax_default table_cell">
-          <img id="u66_img" class="img " src="images/competitions/u66.png"/>
-          <div id="u66_text" class="text ">
-            <p><span>Эстония</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u67" class="ax_default table_cell">
-          <img id="u67_img" class="img " src="images/competitions/u64.png"/>
-          <div id="u67_text" class="text ">
-            <p><span>17-20 марта</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u68" class="ax_default table_cell">
-          <img id="u68_img" class="img " src="images/competitions/u65.png"/>
-          <div id="u68_text" class="text ">
-            <p><span>10 этап Кубок мира</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u69" class="ax_default table_cell">
-          <img id="u69_img" class="img " src="images/competitions/u66.png"/>
-          <div id="u69_text" class="text ">
-            <p><span>Норвегия</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u70" class="ax_default table_cell">
-          <img id="u70_img" class="img " src="images/competitions/u64.png"/>
-          <div id="u70_text" class="text ">
-            <p><span>26-29 августа 2021</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u71" class="ax_default table_cell">
-          <img id="u71_img" class="img " src="images/competitions/u65.png"/>
-          <div id="u71_text" class="text ">
-            <p><span>Чемпионат мира по летнему биатлону (ЛЧМ-2021)</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u72" class="ax_default table_cell">
-          <img id="u72_img" class="img " src="images/competitions/u66.png"/>
-          <div id="u72_text" class="text ">
-            <p><span>Чехия</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u73" class="ax_default table_cell">
-          <img id="u73_img" class="img " src="images/competitions/u64.png"/>
-          <div id="u73_text" class="text ">
-            <p><span>27-28 ноября 2021</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u74" class="ax_default table_cell">
-          <img id="u74_img" class="img " src="images/competitions/u65.png"/>
-          <div id="u74_text" class="text ">
-            <p><span>1 этап&nbsp; &nbsp; &nbsp; Чемпионат мира по летнему биатлону</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u75" class="ax_default table_cell">
-          <img id="u75_img" class="img " src="images/competitions/u66.png"/>
-          <div id="u75_text" class="text ">
-            <p><span>Чехия</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u76" class="ax_default table_cell">
-          <img id="u76_img" class="img " src="images/competitions/u76.png"/>
-          <div id="u76_text" class="text ">
-            <p><span>5-19 февраля</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u77" class="ax_default table_cell">
-          <img id="u77_img" class="img " src="images/competitions/u77.png"/>
-          <div id="u77_text" class="text ">
-            <p><span>&nbsp;&nbsp; &nbsp; Зимние Олимпийские игры (ОИ-2022)</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Table Cell) -->
-        <div id="u78" class="ax_default table_cell">
-          <img id="u78_img" class="img " src="images/competitions/u78.png"/>
-          <div id="u78_text" class="text ">
-            <p><span>Китай</span></p>
-          </div>
-        </div>
+        </table>
       </div>
+
 
       <!-- Unnamed (Rectangle) -->
       <div id="u79" class="ax_default box_2">
@@ -282,10 +151,10 @@
         </div>
       </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u80" class="ax_default heading_1">
-        <div id="u80_div" class=""></div>
-        <div id="u80_text" class="text ">
+      <!-- Unnamed (Rectangle)(80) -->
+      <div id="u2" class="ax_default heading_1">
+        <div id="u2_div" class=""></div>
+        <div id="u2_text" class="text ">
           <p><span>Biathlon Stat</span></p>
         </div>
       </div>
@@ -299,33 +168,33 @@
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u82" class="ax_default link_button">
-        <div id="u82_div" class=""></div>
-        <div id="u82_text" class="text ">
+      <div id="u4" class="ax_default link_button">
+        <div id="u4_div" class=""></div>
+        <div id="u4_text" class="text ">
           <p><span>Login or register</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u83" class="ax_default link_button">
-        <div id="u83_div" class=""></div>
-        <div id="u83_text" class="text ">
+      <div id="u5" class="ax_default link_button">
+        <div id="u5_div" class=""></div>
+        <div id="u5_text" class="text ">
           <p><span>Biathletes</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u84" class="ax_default link_button">
-        <div id="u84_div" class=""></div>
-        <div id="u84_text" class="text ">
+      <div id="u6" class="ax_default link_button">
+        <div id="u6_div" class=""></div>
+        <div id="u6_text" class="text ">
           <p><span>Calendar</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u85" class="ax_default link_button">
-        <div id="u85_div" class=""></div>
-        <div id="u85_text" class="text ">
+      <div id="u12" class="ax_default link_button">
+        <div id="u12_div" class=""></div>
+        <div id="u12_text" class="text ">
           <p><span>Competitions</span></p>
         </div>
       </div>

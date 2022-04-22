@@ -11,6 +11,7 @@ res.then(function(response) {
         <tr>
         <td>${data[i].id}</td>
         <td>${data[i].name + " " +data[i].secondName}</td>
+        <td>${data[i].nationality}</td>
         <td>${data[i].gender}</td>
         </tr>
         `

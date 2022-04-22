@@ -7,7 +7,6 @@ let biat_id = 1;
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
-    const table = document.getElementById('CompetitionsTable');
     let name = data[biat_id].name + " " + data[biat_id].secondName;
     let nationality = data[biat_id].nationality;
     bday = new Date(data[biat_id].birthDate)

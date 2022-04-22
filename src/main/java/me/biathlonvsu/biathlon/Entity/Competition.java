@@ -34,6 +34,9 @@ public class Competition {
     @Column(name = "LOCATION")
     private String location;
 
+    @Column(name = "ABOUT")
+    private String about;
+
     @OneToMany(mappedBy = "competition")
     Set<CompetitionResult> competitionResults;
 }

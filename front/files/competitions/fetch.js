@@ -5,7 +5,7 @@ res.then(function(response) {
     return response.json();
 }).then(function (data) {
     const table = document.getElementById('CompetitionsTable');
-    for(let i = 0; i < 10; i++) {
+    for(let i = 0; i < Object.keys(data).length; i++) {
         let row = `
         <tr>
         <td>${data[i].id}</td>

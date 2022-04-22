@@ -1,6 +1,5 @@
 const requestURL = 'http://localhost:8080/biathletes'
 res = fetch(requestURL)
-
 res.then(function(response) {
     return response.json();
 }).then(function (data) {

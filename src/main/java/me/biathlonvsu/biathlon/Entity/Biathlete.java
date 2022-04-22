@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 
 import me.biathlonvsu.biathlon.SupportingTools.Gender;
+import me.biathlonvsu.biathlon.SupportingTools.Nationality;
 import org.springframework.data.relational.core.mapping.Table;
 
 import javax.persistence.*;
@@ -38,8 +39,11 @@ public class Biathlete {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    @Column(name = "NATIONALITY")
+    @Enumerated(EnumType.STRING)
+    private Nationality nationality;
+
     @OneToMany(mappedBy = "biathlete")
-    //@JsonBackReference
     Set<CompetitionResult> competitionResults;
 
     @Transient

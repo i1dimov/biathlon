@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Biathletes</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/biathletes/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/biathletes/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+
+  <!-- Table style -->
+  <style>
+    table{
+      position:absolute;
+      top:650px;
+      left:600px;
+      width:700px;
+      height:400px;
+      alignment: center;
+    }
+    td{
+      border: 1px solid #dddddd;
+      padding: 5px;
+      background: white;
+    }
+    th{
+      border: 1px solid #62666b;
+      background-color: white;
+      padding: 5px;
+      font-weight: bold;
+    }
+  </style>
+
+    <div id="base" class="">
+
+      <!-- Unnamed (Image) -->
+      <div id="u93" class="ax_default image">
+        <img id="u93_img" class="img " src="images/biathletes/u93.svg"/>
+        <div id="u93_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Search for athlete (Text Field) -->
+      <div id="u94" class="ax_default text_field" data-label="Search for athlete">
+        <div id="u94_div" class=""></div>
+        <input id="u94_input" type="text" value="Search for athlete" class="u94_input"/>
+      </div>
+
+      <!-- Unnamed (Droplist) -->
+      <div id="u95" class="ax_default droplist">
+        <div id="u95_div" class=""></div>
+        <select id="u95_input" class="u95_input">
+          <option class="u95_input_option" value="All">All</option>
+          <option class="u95_input_option" value="Russia">Russia</option>
+          <option class="u95_input_option" value="USA">USA</option>
+          <option class="u95_input_option" value="Germany">Germany</option>
+        </select>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u96" class="ax_default label">
+        <div id="u96_div" class=""></div>
+        <div id="u96_text" class="text ">
+          <p><span>Nationality</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Droplist) -->
+      <div id="u97" class="ax_default droplist">
+        <div id="u97_div" class=""></div>
+        <select id="u97_input" class="u97_input">
+          <option class="u97_input_option" value="Any">Any</option>
+          <option class="u97_input_option" value="Men">Men</option>
+          <option class="u97_input_option" value="Women">Women</option>
+        </select>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u98" class="ax_default label">
+        <div id="u98_div" class=""></div>
+        <div id="u98_text" class="text ">
+          <p><span>Gender</span></p>
+        </div>
+      </div>
+
+      <script src ="files/biathletes/fetch.js"></script>
+      <!-- Competitions table -->
+      <div>
+        <table>
+          <div>
+            <tr class = "bg-info">
+              <th>Id</th>
+              <th>Name</th>
+              <th>Gender</th>
+            </tr>
+            <tbody id = "BiathletesTable">
+            </tbody>
+          </div>
+        </table>
+      </div>
+
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u149" class="ax_default box_2">
+        <div id="u149_div" class=""></div>
+        <div id="u149_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u150" class="ax_default heading_1">
+        <div id="u150_div" class=""></div>
+        <div id="u150_text" class="text ">
+          <p><span>Biathlon Stat</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u151" class="ax_default image">
+        <img id="u151_img" class="img " src="images/home/u3.png"/>
+        <div id="u151_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u152" class="ax_default link_button">
+        <div id="u152_div" class=""></div>
+        <div id="u152_text" class="text ">
+          <p><span>Login or register</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u153" class="ax_default link_button">
+        <div id="u153_div" class=""></div>
+        <div id="u153_text" class="text ">
+          <p><span>Biathletes</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u154" class="ax_default link_button">
+        <div id="u154_div" class=""></div>
+        <div id="u154_text" class="text ">
+          <p><span>Calendar</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u155" class="ax_default link_button">
+        <div id="u155_div" class=""></div>
+        <div id="u155_text" class="text ">
+          <p><span>Competitions</span></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

@@ -16,43 +16,43 @@ public class UserController {
     private final UserService userService;
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
-    @GetMapping("/register")
+    @PostMapping("/register")// Регистрация
     public ResponseEntity<User> register(@RequestBody User user){
         return ResponseEntity.ok(userService.register(user.getLogin(), user.getPassword(), user.getName()));
     }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<User> logIn(@RequestBody User user){
         return ResponseEntity.ok(userService.logIn(user.getLogin(), user.getPassword()));
     }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
-    @GetMapping("/changePassword")
+    @PostMapping("/changePassword")
     public ResponseEntity<Boolean> changeUserPassword(@RequestParam int userId, @RequestParam String newPassword){
         return ResponseEntity.ok(userService.changePassword(userId, newPassword));
     }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
-    @GetMapping("/subscribeToBiathlete")
+    @PostMapping("/subscribeToBiathlete")
     public ResponseEntity<Boolean> subscribeToBiathlete(@RequestParam int userId,@RequestParam int biathleteId){
         return ResponseEntity.ok(userService.subscribeToBiathlete(userId, biathleteId));
     }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
-    @GetMapping("/subscribeToCompetition")
+    @PostMapping("/subscribeToCompetition")
     public ResponseEntity<Boolean> subscribeToCompetition(@RequestParam int userId,@RequestParam int competitionId){
         return ResponseEntity.ok(userService.subscribeToCompetition(userId, competitionId));
     }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
-    @GetMapping("/unsubscribeFromBiathlete")
+    @PostMapping("/unsubscribeFromBiathlete")
     public ResponseEntity<Boolean> unsubscribeFromBiathlete(@RequestParam int userId,@RequestParam int biathleteId){
         return ResponseEntity.ok(userService.unsubscribeFromBiathlete(userId, biathleteId));
     }
 
     @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
-    @GetMapping("/unsubscribeFromCompetition")
+    @PostMapping("/unsubscribeFromCompetition")
     public ResponseEntity<Boolean> unsubscribeFromCompetition(@RequestParam int userId,@RequestParam int competitionId){
         return ResponseEntity.ok(userService.unsubscribeFromCompetition(userId, competitionId));
     }

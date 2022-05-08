@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Biathletes</title>
+    <link href="../styles/index.css" type="text/css" rel="stylesheet">
+    <link href="../styles/biathletes.css" type="text/css" rel="stylesheet">
+    <script src="../scripts/fetch_biathletes.js"></script>
+</head>
+
+<header>
+    <div class="inner_header">
+        <div class="logo_container">
+            <img class="logo" src="../images/home/u3.png"/>
+            <h1>Biathlon Stat</h1>
+        </div>
+        <ul class="navigation">
+            <a>
+                <li>Competitions</li>
+            </a>
+            <a>
+                <li>Biathletes</li>
+            </a>
+            <a>
+                <li>Calendar</li>
+            </a>
+            <a>
+                <li>Login or register</li>
+            </a>
+        </ul>
+    </div>
+</header>
+<body>
+<div class="content">
+    <img id="u93_img" class="img" src="../images/biathletes/u93.svg"/>
+    <div class="inputs">
+        <input id="u94_input" type="text" value="Search for biathlete" class="u94_input"/>
+        <div class="selects">
+            <div class="label-input">
+                <p><span>Nationality:</span></p>
+                <select id="u95_input" class="u95_input">
+                    <option class="u95_input_option" value="All">All</option>
+                    <option class="u95_input_option" value="Russia">Russia</option>
+                    <option class="u95_input_option" value="USA">USA</option>
+                    <option class="u95_input_option" value="Germany">Germany</option>
+                </select>
+            </div>
+            <div class="label-input">
+                <p><span>Gender:</span></p>
+                <select id="u97_input" class="u97_input">
+                    <option class="u97_input_option" value="Any">Any</option>
+                    <option class="u97_input_option" value="Men">Men</option>
+                    <option class="u97_input_option" value="Women">Women</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="table_container">
+        <table>
+            <div>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Nationality</th>
+                    <th>Gender</th>
+                </tr>
+                <tbody id="BiathletesTable" >
+                </tbody>
+            </div>
+        </table>
+    </div>
+</div>
+</body>
+
+<footer>
+    <a>
+        <li>Contact:</li>
+    </a>
+    <a>
+        <li>Email</li>
+    </a>
+    <a>
+        <li>GitHub</li>
+    </a>
+</footer>
+
+</html>

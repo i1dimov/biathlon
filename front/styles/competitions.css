@@ -1,0 +1,37 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 80px;
+}
+
+.inputs{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input, select{
+    font-size: 16px;
+}
+
+.selects{
+    display: flex;
+    gap:20px;
+}
+
+.label-input{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.table_container{
+    overflow: auto;
+    max-height: 40vh;
+}
+
+.img{
+    height: 250px;
+}

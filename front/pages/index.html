@@ -4,27 +4,34 @@
     <title>Home</title>
     <meta charset="UTF-8">
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
-    <script src="../scripts/fetch_home.js"></script>
-
+    <!--
+        <script src="../scripts/router.js"></script>
+        <script src="../scripts/routes.js"></script>
+    -->
+    <script src="../index.js"></script>
+    <script src="../scripts/fetch_index.js"></script>
 </head>
 
 <header>
     <div class="inner_header">
         <div class="logo_container">
             <img class="logo" src="../images/home/u3.png"/>
-            <h1>Biathlon Stat</h1>
+            <a href="index.html" >
+                <h1>Biathlon Stat</h1>
+            </a>
+
         </div>
         <ul class="navigation">
-            <a>
+            <a href="competitions.html">
                 <li>Competitions</li>
             </a>
-            <a>
+            <a  href="biathletes.html">
                 <li>Biathletes</li>
             </a>
-            <a>
+            <a href="calendar.html">
                 <li>Calendar</li>
             </a>
-            <a>
+            <a href="login.html">
                 <li>Login or register</li>
             </a>
         </ul>
@@ -35,15 +42,17 @@
 <!-- Body image -->
 <img class="body_image" src="../images/home/u7.svg"/>
 
+<h1 class="table_header">Ближайшие события</h1>
 <!-- Competitions Table -->
 <div class="table_container">
-    <h1>Ближайшие события</h1>
+
     <table>
         <div>
             <tr class="bg-info">
-                <th>Date</th>
+                <th>ID</th>
                 <th>Competition</th>
                 <th>Location</th>
+                <th>Date</th>
             </tr>
             <tbody id="CompetitionsTable">
             </tbody>
@@ -62,6 +71,5 @@
         <li>GitHub</li>
     </a>
 </footer>
-
 </body>
 </html>

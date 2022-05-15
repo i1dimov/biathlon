@@ -54,14 +54,33 @@ header, footer {
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
-    width: 50%;
+    height: 250px;
 }
 
+.table_header{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.table_linker{
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+table tr:hover td{
+    background: lavender;
+    cursor: pointer;
+}
+
+
 .table_container{
-    margin: 40px auto;
+    margin: 20px auto;
     width: 50%;
     padding: 10px;
     text-align: center;
+    overflow: auto;
+    max-height: 40vh;
 }
 
 table{
@@ -91,6 +110,20 @@ footer {
 }
 
 footer a{
-    list-style: none;
     margin: 20px;
+    cursor: pointer;
+    text-decoration: none;
 }
+li{
+    list-style-type: none;
+}
+
+
+header a{
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: white;
+}
+
+

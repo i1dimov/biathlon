@@ -1,0 +1,35 @@
+.info {
+    margin-top: 40px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    margin-left: 100px;
+}
+.info p{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+button {
+    position: relative;
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    border: 2px solid #000;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+    margin: 20px;
+    border-radius: 10px;
+    width: 200px;
+}
+button:hover {
+    box-shadow:
+            -7px -7px 20px 0px #fff9,
+            -4px -4px 5px 0px #fff9,
+            7px 7px 20px 0px #0002,
+            4px 4px 5px 0px #0001;
+}
+.form_container{
+    margin-top: -50px;
+}

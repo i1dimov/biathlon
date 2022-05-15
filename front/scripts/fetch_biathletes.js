@@ -8,10 +8,10 @@ res.then(function(response) {
     for(let i = 0; i < Object.keys(data).length; i++) {
         let row = `
         <tr>
-        <td>${data[i].id}</td>
-        <td>${data[i].name + " " +data[i].secondName}</td>
-        <td>${data[i].nationality}</td>
-        <td>${data[i].gender}</td>
+        <td><a class="table_linker" onclick=passValue(${i},"biathlete) href="../pages/biathlete.html">${data[i].id}</a></td>
+        <td><a class="table_linker" onclick=passValue(${i},"biathlete") href="../pages/biathlete.html">${data[i].name + " " +data[i].secondName}<a/></td>
+        <td><a class="table_linker" onclick=passValue(${i},"biathlete") href="../pages/biathlete.html">${data[i].nationality}</a>></td>
+        <td><a class="table_linker" onclick=passValue(${i},"biathlete") href="../pages/biathlete.html">${data[i].gender}</a>></td>
         </tr>
         `
         table.innerHTML += row;

@@ -1,7 +1,6 @@
+let comp_id = localStorage.getItem("competitionId");
 const requestURL = 'http://localhost:8080/competitions'
 res = fetch(requestURL)
-
-let comp_id = 1;
 
 res.then(function(response) {
     return response.json();
@@ -11,7 +10,6 @@ res.then(function(response) {
     let location = data[comp_id].location;
     let competitionResults = data[comp_id].competitionResults;
     let about = data[comp_id].about;
-    console.log(data[comp_id])
 
     const name_html = document.getElementById('name');
     name_html.innerHTML += name;

@@ -143,10 +143,10 @@ class UserServiceTest {
     @Test
     void changePassword() {
         createMockito();
-        boolean tr = userService.changePassword(2, "12");
+        boolean tr = userService.changePassword(2, "12".hashCode());
         assertTrue(tr);
         assertEquals(userRepository.findById(user.getId()).get().getPassword(), "12".hashCode());
-        boolean fl = userService.changePassword(3, "12");
+        boolean fl = userService.changePassword(3, "12".hashCode());
         assertFalse(fl);
     }
 

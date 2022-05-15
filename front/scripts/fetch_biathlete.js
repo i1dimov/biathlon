@@ -1,8 +1,6 @@
 const requestURL = 'http://localhost:8080/biathletes'
 res = fetch(requestURL)
-
-//let biat_id = url.searchParams.get("id"); для получение параметров из url
-let biat_id = 4;
+let biat_id = localStorage.getItem('biathleteId');
 
 res.then(function(response) {
     return response.json();

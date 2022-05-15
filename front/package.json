@@ -1,0 +1,27 @@
+{
+  "name": "biathlon",
+  "version": "1.0.0",
+  "proxy": "http://localhost:8080",
+  "description": "Это репозиторий проекта студентов кафедры программирования и информационных технологий ВГУ по предмету Технологии программирования.",
+  "main": "index.js",
+  "scripts": {
+    "build" : "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deadly-dead-of-deadman/biathlon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deadly-dead-of-deadman/biathlon/issues"
+  },
+  "homepage": "https://github.com/deadly-dead-of-deadman/biathlon#readme",
+  "dependencies": {
+    "route-recognizer": "^0.3.4",
+    "router_js": "^8.0.2",
+    "rsvp": "^4.8.5"
+  }
+}

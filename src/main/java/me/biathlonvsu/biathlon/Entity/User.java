@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 
@@ -21,17 +20,16 @@ import java.util.Set;
 public class User {
 
     @Id
-    @Column(value = "USER_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "USER_ID")
     private int id;
 
-    @Column(value = "LOGIN")
+    @Column(name = "LOGIN")
     private String login;
 
-    @Column(value = "PASSWORD")
+    @Column(name = "PASSWORD")
     private int password;
 
-    @Column(value = "NAME")
+    @Column(name = "NAME")
     private String name;
 
     @ManyToMany

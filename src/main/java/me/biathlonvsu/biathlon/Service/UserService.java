@@ -88,10 +88,10 @@ public class UserService {
         return null;
     }
 
-    public boolean changePassword(int userId, String password){
+    public boolean changePassword(int userId, int password){
         Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
-            user.get().setPassword(password.hashCode());
+            user.get().setPassword(password);
             return true;
         }
         return false;

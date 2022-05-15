@@ -14,7 +14,6 @@ form.addEventListener('submit',function(event){
         'password' : password.hashCode(),
     }
     postForm(user)
-    console.log(user)
 })
 
 function postForm(user){
@@ -22,17 +21,6 @@ function postForm(user){
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(user)
-    }).then(() =>{
+    }).then((response) =>{
     })
-}
-
-String.prototype.hashCode = function(){
-    var hash = 0;
-    if (this.length === 0) return hash;
-    for (i = 0; i < this.length; i++) {
-        char = this.charCodeAt(i);
-        hash = ((hash<<5)-hash)+char;
-        hash = hash & hash; // Convert to 32bit integer
-    }
-    return hash;
 }

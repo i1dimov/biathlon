@@ -8,10 +8,9 @@ form.addEventListener('submit',function(event){
     const password = document.getElementById('password').value
     const user = {
         'login': login,
-        'password' : password,
+        'password' : password.hashCode(),
     }
     postForm(user)
-    console.log(user)
 })
 
 function postForm(user){
@@ -19,6 +18,10 @@ function postForm(user){
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(user)
-    }).then(() =>{
+    }).then(function(response){
+        response.text()
+            .then(function (data){
+            sessionStorage.setItem("user_id",JSON.parse(data).id)
+        })
     })
 }

@@ -28,14 +28,15 @@ res.then(function(response) {
 });
 
 function follow(){
-    let url ='http://localhost:8080/subscribeToBiathlete'
+    let url ='http://localhost:8080/subscribeToBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
+    console.log(url)
     event.preventDefault()
-    const subscription ={ "userId" : get_user_id(),
-        "biathleteId": biat_id}
+    const subscription = {
+        "userId" : get_user_id(),
+        "biathleteId": biat_id }
     fetch(url, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(subscription)
     }).then((response) =>{
     })
 }

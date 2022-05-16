@@ -20,7 +20,6 @@ function get_user_id(){
 
 //If logged in
 if(is_logged()){
-    console.log("MAKING SHIT1")
     //editing header
     document.getElementById("login_link").href = "profile.html";
     document.getElementById("login_text").innerHTML = "Profile";
@@ -31,7 +30,6 @@ if(is_logged()){
     }
     //Not logged
 } else {
-    console.log("MAKING SHIT")
     //editing header
     document.getElementById("login_link").href = "login.html";
     document.getElementById("login_text").innerHTML = "Login or register";
@@ -41,5 +39,3 @@ if(is_logged()){
         document.getElementById("follow").remove();
     }
 }
-
-console.log(get_user_id())

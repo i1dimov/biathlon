@@ -38,6 +38,7 @@ button{
     font-size: 24px;
     background-color: #0a6cd6;
     color: white;
+    cursor: pointer;
 }
 #name{
     font-size: 40px;

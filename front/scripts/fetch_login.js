@@ -21,7 +21,8 @@ function postForm(user){
     }).then(function(response){
         response.text()
             .then(function (data){
-            sessionStorage.setItem("user_id",JSON.parse(data).id)
+                login(data);
         })
     })
+    location.assign('index.html')
 }

@@ -14,6 +14,11 @@
 
 input, select{
     font-size: 16px;
+    margin-top: 8px;
+}
+
+input{
+    width: 100%;
 }
 
 .selects{
@@ -34,4 +39,15 @@ input, select{
 
 .img{
     height: 250px;
+}
+
+button{
+    width: 30%;
+    border: none;
+    padding: 10px 20px;
+    margin: 16px 35%;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #0a6cd6;
+    color: white;
 }

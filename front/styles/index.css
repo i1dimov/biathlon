@@ -126,4 +126,8 @@ header a{
     color: white;
 }
 
+button{
+    cursor: pointer;
+}
+
 

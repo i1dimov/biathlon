@@ -27,8 +27,8 @@
             <a href="calendar.html">
                 <li>Calendar</li>
             </a>
-            <a href="login.html">
-                <li>Login or register</li>
+            <a href="login.html" id="login_link">
+                <li id ="login_text">Login or register</li>
             </a>
         </ul>
     </div>
@@ -38,7 +38,7 @@
 <div class="container">
     <div class="horizontal">
         <div>
-            <img class="flag" src="../images/flags/Norway.png"/>
+            <img id ="flag" class="flag" src="../images/flags/" alt=""/>
             <p id="name">
             </p>
         </div>
@@ -61,7 +61,7 @@
             </p>
         </div>
     </div>
-    <button>Follow</button>
+    <button id="follow" onclick=follow()>Follow</button>
 </div>
 </body>
 
@@ -76,5 +76,8 @@
         <li>GitHub</li>
     </a>
 </footer>
+
+<script src="../scripts/login_handler.js"></script>
+<script src="../index.js"></script>
 
 </html>

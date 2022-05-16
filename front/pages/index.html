@@ -4,11 +4,6 @@
     <title>Home</title>
     <meta charset="UTF-8">
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
-    <!--
-        <script src="../scripts/router.js"></script>
-        <script src="../scripts/routes.js"></script>
-    -->
-    <script src="../index.js"></script>
     <script src="../scripts/fetch_index.js"></script>
 </head>
 
@@ -31,8 +26,8 @@
             <a href="calendar.html">
                 <li>Calendar</li>
             </a>
-            <a href="login.html">
-                <li>Login or register</li>
+            <a href="login.html" id="login_link">
+                <li id ="login_text">Login or register</li>
             </a>
         </ul>
     </div>
@@ -59,7 +54,7 @@
         </div>
     </table>
 </div>
-
+</body>
 <footer>
     <a>
         <li>Contact:</li>
@@ -71,5 +66,7 @@
         <li>GitHub</li>
     </a>
 </footer>
-</body>
+
+<script src="../scripts/login_handler.js"></script>
+<script src="../index.js"></script>
 </html>

@@ -7,11 +7,16 @@ res.then(function(response) {
 }).then(function (data) {
     let name = data[biat_id].name + " " + data[biat_id].secondName;
     let nationality = data[biat_id].nationality;
+
+    //FLAG
+    const flag = document.getElementById("flag");
+    flag.src += "" + nationality + ".png"
+
     bday = new Date(data[biat_id].birthDate)
     let gender = data[biat_id].gender;
 
     const id_html = document.getElementById("id");
-    id_html.innerText += biat_id;
+    id_html.innerText += Number(biat_id) + 1;
     const name_html = document.getElementById('name');
     name_html.innerHTML = name;
     const nationality_html = document.getElementById('nationality');
@@ -21,3 +26,17 @@ res.then(function(response) {
     const gender_html = document.getElementById('gender');
     gender_html.innerText += gender;
 });
+
+function follow(){
+    let url ='http://localhost:8080/subscribeToBiathlete'
+    event.preventDefault()
+    const subscription ={ "userId" : get_user_id(),
+        "biathleteId": biat_id}
+    fetch(url, {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(subscription)
+    }).then((response) =>{
+    })
+}
+

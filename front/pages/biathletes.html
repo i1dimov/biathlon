@@ -5,7 +5,7 @@
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
     <link href="../styles/biathletes.css" type="text/css" rel="stylesheet">
     <script src="../scripts/fetch_biathletes.js"></script>
-    <script src="../index.js"></script>
+
 </head>
 
 <header>
@@ -27,8 +27,8 @@
             <a href="calendar.html">
                 <li>Calendar</li>
             </a>
-            <a href="login.html">
-                <li>Login or register</li>
+            <a href="login.html" id="login_link">
+                <li id ="login_text">Login or register</li>
             </a>
         </ul>
     </div>
@@ -36,28 +36,32 @@
 <body>
 <div class="content">
     <img id="u93_img" class="img" src="../images/biathletes/u93.svg"/>
-    <div class="inputs">
-        <input id="u94_input" type="text" value="Search for biathlete" class="u94_input"/>
-        <div class="selects">
-            <div class="label-input">
-                <p><span>Nationality:</span></p>
-                <select id="u95_input" class="u95_input">
-                    <option class="u95_input_option" value="All">All</option>
-                    <option class="u95_input_option" value="Russia">Russia</option>
-                    <option class="u95_input_option" value="USA">USA</option>
-                    <option class="u95_input_option" value="Germany">Germany</option>
-                </select>
+    <form id="biathlete_form">
+        <div class="inputs">
+            <input id="name" type="text" placeholder="Search for biathlete"/>
+            <div class="selects">
+                <div class="label-input">
+                    <p><span>Nationality:</span></p>
+                    <select id="nationality">
+                        <option class="u95_input_option" value="All">All</option>
+                        <option class="u95_input_option" value="Russia">Russia</option>
+                        <option class="u95_input_option" value="USA">USA</option>
+                        <option class="u95_input_option" value="Germany">Germany</option>
+                    </select>
+                </div>
+                <div class="label-input">
+                    <p><span>Gender:</span></p>
+                    <select id="gender">
+                        <option  value="Any">Any</option>
+                        <option  value="Men">Men</option>
+                        <option  value="Women">Women</option>
+                    </select>
+                </div>
             </div>
-            <div class="label-input">
-                <p><span>Gender:</span></p>
-                <select id="u97_input" class="u97_input">
-                    <option class="u97_input_option" value="Any">Any</option>
-                    <option class="u97_input_option" value="Men">Men</option>
-                    <option class="u97_input_option" value="Women">Women</option>
-                </select>
-            </div>
+            <button value="submit"> Search </button>
         </div>
-    </div>
+    </form>
+
 
     <div class="table_container">
         <table>
@@ -88,4 +92,6 @@
     </a>
 </footer>
 
+<script src="../scripts/login_handler.js"></script>
+<script src="../index.js"></script>
 </html>

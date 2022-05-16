@@ -1,18 +1,20 @@
-const requestURL = 'http://localhost:8080/competitions'
-res = fetch(requestURL)
+const requestURL = 'http://localhost:8080/searchCompetitions'
+const form = document.getElementById('competition_form');
 
-res.then(function(response) {
-    return response.json();
-}).then(function (data) {
-    const table = document.getElementById('CompetitionsTable');
-    for(let i = 0; i < Object.keys(data).length; i++) {
-        let row = `
-        <tr>
-        <td>${data[i].id}</td>
-        <td>${data[i].name}</td>
-        <td>${data[i].location}</td>
-        </tr>
-        `
-        table.innerHTML += row;
+form.addEventListener('submit',function(event){
+    event.preventDefault()
+    const name = document.getElementById('name').value;
+    const season = document.getElementById('season').value;
+    const type = document.getElementById('type').value
+
+    const search = {
+        'competitionName': name,
+        'season' : season,
+        'type' : type,
     }
-});
+    getForm(search)
+})
+
+function getForm(search){
+
+}

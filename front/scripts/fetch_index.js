@@ -1,6 +1,5 @@
 const requestURL = 'http://localhost:8080/competitions'
 res = fetch(requestURL)
-
 res.then(function(response) {
     return response.json();
 }).then(function (data) {

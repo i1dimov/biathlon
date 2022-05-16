@@ -23,4 +23,5 @@ function postForm(user){
         body: JSON.stringify(user)
     }).then((response) =>{
     })
+    location.assign('login.html')
 }

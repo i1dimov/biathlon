@@ -4,6 +4,7 @@
     <title>Profile</title>
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
     <link href="../styles/profile.css" type="text/css" rel="stylesheet">
+    <script src="../scripts/fetch_profile.js"></script>
 </head>
 
 <header>
@@ -25,8 +26,8 @@
             <a href="calendar.html">
                 <li>Calendar</li>
             </a>
-            <a href="login.html">
-                <li>Login or register</li>
+            <a href="login.html" id="login_link">
+                <li id ="login_text">Login or register</li>
             </a>
         </ul>
     </div>
@@ -34,8 +35,9 @@
 
 <body>
     <div class="info">
-        <p><span>Логин: </span></p>
-        <button><span>Сменить пароль</span></button>
+        <p id="profile_login"><span>Login: </span></p>
+        <button><span>Change password</span></button>
+        <button onclick=logout()><span>Logout</span></button>
     </div>
     <!-- Подписки -->
     <div class="table_container">
@@ -58,5 +60,8 @@
         <li>GitHub</li>
     </a>
 </footer>
+
+<script src="../scripts/login_handler.js"></script>
+<script src ="../index.js"></script>
 
 </html>

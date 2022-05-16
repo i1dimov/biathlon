@@ -22,3 +22,16 @@ res.then(function(response) {
     const about_html = document.getElementById('about');
     about_html.innerHTML += about;
 });
+
+function follow(){
+    let url ='http://localhost:8080/subscribeToCompetition'
+    event.preventDefault()
+    const subscription ={ "userId" : get_user_id(),
+    "competitionId": comp_id}
+    fetch(url, {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(subscription)
+    }).then((response) =>{
+    })
+}

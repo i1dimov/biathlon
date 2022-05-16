@@ -6,6 +6,7 @@
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
     <link href="../styles/competitions.css" type="text/css" rel="stylesheet">
     <script src="../scripts/fetch_index.js"></script>
+    <script src="../scripts/fetch_competitions.js"></script>
 </head>
 
 <header>
@@ -27,8 +28,8 @@
             <a href="calendar.html">
                 <li>Calendar</li>
             </a>
-            <a href="login.html">
-                <li>Login or register</li>
+            <a href="login.html" id="login_link">
+                <li id ="login_text">Login or register</li>
             </a>
         </ul>
     </div>
@@ -40,11 +41,12 @@
     <img class="img" src="../images/competitions/u51.svg"/>
 
     <div class="inputs">
-        <input type="text" value="Search for Competition"/>
+        <form id="competition_form" class="competition_form">
+            <input type="text" id="name" placeholder="Search for Competition"/>
             <div class="selects">
                 <div class="label-input">
                     <p><span>Season:</span></p>
-                    <select class="season">
+                    <select class="season" id="season">
                         <option value="Any">Any</option>
                         <option value="2011">2011</option>
                         <option value="2012">2012</option>
@@ -56,7 +58,7 @@
 
                 <div class="label-input">
                     <p><span>Type:</span></p>
-                    <select class="athletes">
+                    <select class="athletes" id="type">
                         <option value="Any">Any</option>
                         <option value="Men">Men</option>
                         <option value="Women">Women</option>
@@ -64,6 +66,9 @@
                     </select>
                 </div>
             </div>
+            <button> Search </button>
+        </form>
+
     </div>
 
     <div class="table_container">
@@ -94,4 +99,7 @@
         <li>GitHub</li>
     </a>
 </footer>
+
+<script src="../scripts/login_handler.js"></script>
+<script src="../index.js"></script>
 </html>

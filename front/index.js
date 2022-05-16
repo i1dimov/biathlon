@@ -1,3 +1,4 @@
+//Passing id value for competition and biathlete pages
 function passValue(id,type){
     if (type === "competition"){
         localStorage.setItem("competitionId",id);
@@ -9,6 +10,7 @@ function passValue(id,type){
 }
 
 
+//hashCode for password
 String.prototype.hashCode = function(){
     var hash = 0;
     if (this.length === 0) return hash;

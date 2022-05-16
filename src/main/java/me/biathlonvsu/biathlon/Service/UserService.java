@@ -30,28 +30,40 @@ public class UserService {
     public boolean subscribeToBiathlete(int userId, int biathleteId){
         boolean b = userRepository.findById(userId).isPresent() && biathleteRepository.findById(biathleteId).isPresent();
         if (b){
-            return userRepository.findById(userId).get().getBiathletes().add(biathleteRepository.findById(biathleteId).get());
+            boolean r = userRepository.findById(userId).get().getBiathletes().
+                    add(biathleteRepository.findById(biathleteId).get());
+            userRepository.save(userRepository.findById(userId).get());
+            return r;
         } else return false;
     }
 
     public boolean subscribeToCompetition(int userId, int competitionId){
         boolean b = userRepository.findById(userId).isPresent() && competitionRepository.findById(competitionId).isPresent();
         if (b){
-            return userRepository.findById(userId).get().getCompetitions().add(competitionRepository.findById(competitionId).get());
+            boolean r = userRepository.findById(userId).get().getCompetitions().
+                    add(competitionRepository.findById(competitionId).get());
+            userRepository.save(userRepository.findById(userId).get());
+            return r;
         } else return false;
     }
 
     public boolean unsubscribeFromBiathlete(int userId, int biathleteId){
         boolean b = userRepository.findById(userId).isPresent() && biathleteRepository.findById(biathleteId).isPresent();
         if (b){
-            return userRepository.findById(userId).get().getBiathletes().remove(biathleteRepository.findById(biathleteId).get());
+            boolean r = userRepository.findById(userId).get().getBiathletes().
+                    remove(biathleteRepository.findById(biathleteId).get());
+            userRepository.save(userRepository.findById(userId).get());
+            return r;
         } else return false;
     }
 
     public boolean unsubscribeFromCompetition(int userId, int competitionId){
         boolean b = userRepository.findById(userId).isPresent() && competitionRepository.findById(competitionId).isPresent();
         if (b){
-            return userRepository.findById(userId).get().getCompetitions().remove(competitionRepository.findById(competitionId).get());
+            boolean r = userRepository.findById(userId).get().getCompetitions().
+                    remove(competitionRepository.findById(competitionId).get());
+            userRepository.save(userRepository.findById(userId).get());
+            return r;
         } else return false;
     }
 

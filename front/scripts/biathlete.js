@@ -1,6 +1,6 @@
+let biat_id = localStorage.getItem('biathleteId');
 const requestURL = 'http://localhost:8080/biathletes'
 res = fetch(requestURL)
-let biat_id = localStorage.getItem('biathleteId');
 
 res.then(function(response) {
     return response.json();
@@ -41,3 +41,16 @@ function follow(){
     })
 }
 
+function unfollow(){
+    let url ='http://localhost:8080/unsubscribeFromBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
+    console.log(url)
+    event.preventDefault()
+    const subscription = {
+        "userId" : get_user_id(),
+        "biathleteId": biat_id }
+    fetch(url, {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+    }).then((response) =>{
+    })
+}

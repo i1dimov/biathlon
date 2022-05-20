@@ -24,7 +24,8 @@ res.then(function(response) {
 });
 
 function follow(){
-    let url ='http://localhost:8080/subscribeToCompetition'
+    let url ='http://localhost:8080/subscribeToCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
+    console.log(url)
     event.preventDefault()
     const subscription ={ "userId" : get_user_id(),
     "competitionId": comp_id}

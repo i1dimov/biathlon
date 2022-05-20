@@ -4,7 +4,6 @@
     <title>Biathletes</title>
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
     <link href="../styles/biathletes.css" type="text/css" rel="stylesheet">
-    <script src="../scripts/fetch_biathletes.js"></script>
 
 </head>
 
@@ -19,16 +18,16 @@
         </div>
         <ul class="navigation">
             <a href="competitions.html">
-                <li>Competitions</li>
+                <li>Соревнования</li>
             </a>
             <a  href="biathletes.html">
-                <li>Biathletes</li>
+                <li>Биатлонисты</li>
             </a>
             <a href="calendar.html">
-                <li>Calendar</li>
+                <li>Календарь</li>
             </a>
             <a href="login.html" id="login_link">
-                <li id ="login_text">Login or register</li>
+                <li id ="login_text">Войти / Зарегистрироваться</li>
             </a>
         </ul>
     </div>
@@ -38,19 +37,21 @@
     <img id="u93_img" class="img" src="../images/biathletes/u93.svg"/>
     <form id="biathlete_form">
         <div class="inputs">
-            <input id="name" type="text" placeholder="Search for biathlete"/>
+            <input id="name" type="text" placeholder="Поиск биатлониста"/>
             <div class="selects">
                 <div class="label-input">
-                    <p><span>Nationality:</span></p>
-                    <select id="nationality">
-                        <option class="u95_input_option" value="All">All</option>
-                        <option class="u95_input_option" value="Russia">Russia</option>
-                        <option class="u95_input_option" value="USA">USA</option>
-                        <option class="u95_input_option" value="Germany">Germany</option>
-                    </select>
+                    <p><span>Страна:</span></p>
+                    <label>
+                        <select id="nationality_select">
+                            <div id="nationality_div">
+                                <option class="nationality" value="All">All</option>
+                            </div>
+
+                        </select>
+                    </label>
                 </div>
                 <div class="label-input">
-                    <p><span>Gender:</span></p>
+                    <p><span>Пол:</span></p>
                     <select id="gender">
                         <option  value="Any">Any</option>
                         <option  value="Men">Men</option>
@@ -58,7 +59,7 @@
                     </select>
                 </div>
             </div>
-            <button value="submit"> Search </button>
+            <button value="submit"> Поиск </button>
         </div>
     </form>
 
@@ -82,16 +83,14 @@
 
 <footer>
     <a>
-        <li>Contact:</li>
-    </a>
-    <a>
-        <li>Email</li>
+        <li>Контакты:</li>
     </a>
     <a>
         <li>GitHub</li>
     </a>
 </footer>
-
+<script src="../scripts/nations.js"></script>
+<script src="../scripts/biathletes.js"></script>
 <script src="../scripts/login_handler.js"></script>
 <script src="../index.js"></script>
 </html>

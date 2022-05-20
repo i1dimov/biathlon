@@ -17,3 +17,8 @@ res.then(function(response) {
         table.innerHTML += row;
     }
 });
+
+const nations_options = document.getElementById('nationality_select')
+let nations = getNations();
+let options = nations.map(nation =>`<option> ${nation} </option>`).join('\n')
+nations_options.innerHTML += options;

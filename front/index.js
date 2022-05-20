@@ -9,7 +9,6 @@ function passValue(id,type){
     }
 }
 
-
 //hashCode for password
 String.prototype.hashCode = function(){
     var hash = 0;

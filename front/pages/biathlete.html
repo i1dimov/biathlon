@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
     <link href="../styles/biathlete.css" type="text/css" rel="stylesheet">
-    <script src="../scripts/fetch_biathlete.js"></script>
+    <script src="../scripts/biathlete.js"></script>
 </head>
 
 <header>
@@ -19,16 +19,16 @@
         </div>
         <ul class="navigation">
             <a href="competitions.html">
-                <li>Competitions</li>
+                <li>Соревнования</li>
             </a>
             <a  href="biathletes.html">
-                <li>Biathletes</li>
+                <li>Биатлонисты</li>
             </a>
             <a href="calendar.html">
-                <li>Calendar</li>
+                <li>Календарь</li>
             </a>
             <a href="login.html" id="login_link">
-                <li id ="login_text">Login or register</li>
+                <li id ="login_text">Войти / Зарегистрироваться</li>
             </a>
         </ul>
     </div>
@@ -48,30 +48,27 @@
                 <span id="id"></span>
             </p>
             <p class="field">
-                <span class="label">Nationality:&nbsp</span>
+                <span class="label">Срана:&nbsp</span>
                 <span id="nationality"></span>
             </p>
             <p class="field">
-                <span class="label">Birthday:&nbsp</span>
+                <span class="label">Дата рождения:&nbsp</span>
                 <span id="bday"></span>
             </p>
             <p class="field">
-                <span class="label">Gender:&nbsp</span>
+                <span class="label">Пол:&nbsp</span>
                 <span id="gender"></span>
             </p>
         </div>
     </div>
-    <button id="follow" onclick=follow()>Follow</button>
+    <button id="follow" onclick=follow()>Подписаться</button>
 </div>
 </body>
 
 <footer>
     <p>
-        <li>Contact:</li>
+        <li>Контакты:</li>
     </p>
-    <a>
-        <li>Email</li>
-    </a>
     <a>
         <li>GitHub</li>
     </a>

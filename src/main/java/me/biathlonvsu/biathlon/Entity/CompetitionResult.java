@@ -27,7 +27,7 @@ public class CompetitionResult {
     @JsonIgnore
     Biathlete biathlete;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @MapsId("competitionId")
     @JoinColumn(name = "COMPETITION_ID")
     @JsonIgnore

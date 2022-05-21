@@ -111,7 +111,11 @@ footer {
 
 footer a{
     margin: 20px;
+    text-decoration: none;
+    color : white;
+    cursor: pointer;
 }
+
 li{
     list-style-type: none;
 }
@@ -128,10 +132,5 @@ button{
     cursor: pointer;
 }
 
-a{
-    text-decoration: none;
-    color : white;
-    cursor: pointer;
-}
 
 

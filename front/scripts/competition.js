@@ -30,36 +30,29 @@ res.then(function(response) {
             `).join('\n')
         table.innerHTML += table_element;
         String(comp_id = Number(comp_id) + 1)
-    console.log(comp_id)
 });
 
 function follow(){
+    console.log('follow')
     let url ='http://localhost:8080/subscribeToCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
     event.preventDefault()
-    const subscription ={
-        "userId" : get_user_id(),
-        "competitionId": comp_id}
     fetch(url, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(subscription)
     }).then((response) =>{
+        updateSubscribe()
     })
-    updateSubscribe()
 }
 
 function unfollow(){
     let url ='http://localhost:8080/unsubscribeFromCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
     event.preventDefault()
-    const subscription ={ "userId" : get_user_id(),
-        "competitionId": comp_id}
     fetch(url, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(subscription)
     }).then((response) =>{
+        updateSubscribe()
     })
-    updateSubscribe()
 }
 
 async function isSubscribed(){
@@ -69,7 +62,6 @@ async function isSubscribed(){
         return data.map(({id}) => id).includes(comp_id)
     })
 
-
 }
 updateSubscribe()
 function updateSubscribe(){
@@ -77,6 +69,7 @@ function updateSubscribe(){
         const follow = document.getElementById('follow')
         const unfollow = document.getElementById('unfollow')
         if (value){
+            console.log('change to unfollow')
             follow.style.display = 'none'
             unfollow.style.display = 'block'
         } else {

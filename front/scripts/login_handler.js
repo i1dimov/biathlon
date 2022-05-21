@@ -11,7 +11,6 @@ function logout(){
 }
 
 function is_logged(){
-    console.log(sessionStorage.getItem("user_id"))
     return sessionStorage.getItem("user_id");
 }
 

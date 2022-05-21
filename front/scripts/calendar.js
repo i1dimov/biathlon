@@ -16,10 +16,9 @@ if(!is_logged()){
                 if(date.getTime() >= Date.now()){
                     let row = `
                 <tr>
-                <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${competitions[i].id}</a></td>
-                <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${competitions[i].name}</a></td>
-                <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${competitions[i].location}</a></td>
-                <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${date.getDate() + "." +  (+date.getMonth() + 1)  + "." + date.getFullYear()}</a></td>
+                <td><a class="table_linker" onclick=passValue(${(+competitions[i].id)-1},'competition') href="../pages/competition.html">${competitions[i].name}</a></td>
+                <td><a class="table_linker" onclick=passValue(${(+competitions[i].id)-1},'competition') href="../pages/competition.html">${competitions[i].location}</a></td>
+                <td><a class="table_linker" onclick=passValue(${(+competitions[i].id)-1},'competition') href="../pages/competition.html">${date.getDate() + "." +  (+date.getMonth() + 1)  + "." + date.getFullYear()}</a></td>
                 </tr>
                 `
                     table.innerHTML += row;

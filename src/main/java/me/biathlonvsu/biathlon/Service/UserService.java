@@ -104,6 +104,7 @@ public class UserService {
         Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
             user.get().setPassword(password);
+            userRepository.save(userRepository.findById(userId).get());
             return true;
         }
         return false;

@@ -11,7 +11,7 @@ res.then(function(response) {
         <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${data[i].id}</a></td>
         <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${data[i].name}</a></td>
         <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${data[i].location}</a></td>
-        <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${date.getDate() + "." + date.getMonth()+1 + "." + date.getFullYear()}</a></td>
+        <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${date.getDate() + "." + (+date.getMonth() + 1) + "." + date.getFullYear()}</a></td>
         </tr>
         `
         table.innerHTML += row;

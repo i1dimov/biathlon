@@ -32,6 +32,7 @@ html{
 }
 
 button{
+    display: none;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;

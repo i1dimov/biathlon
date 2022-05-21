@@ -14,25 +14,77 @@ res.then(function(response) {
     const name_html = document.getElementById('name');
     name_html.innerHTML += name;
     const date_html = document.getElementById('date');
-    date_html.innerHTML += date.getDate() + "." + date.getMonth()+1 + "." + date.getFullYear();
+    date_html.innerHTML += date.getDate() + "." + (+date.getMonth() + 1) + "." + date.getFullYear();
     const location_html = document.getElementById('location');
     location_html.innerHTML += location;
-    const competitionResults_html = document.getElementById('competitionResults');
-    //competitionResults_html.innerHTML += competitionResults;
     const about_html = document.getElementById('about');
     about_html.innerHTML += about;
+
+    const table =  document.getElementById('ResultsTable')
+        let table_element = competitionResults.sort((a,b) => b.score - a.score).map(competitionRes =>`
+                <tr>
+                <td>${competitionRes.id.biathleteId}</td>
+                <td>${competitionRes.biathleteName}</td>
+                <td>${competitionRes.score}</td>
+                </tr>
+            `).join('\n')
+        table.innerHTML += table_element;
+        String(comp_id = Number(comp_id) + 1)
+    console.log(comp_id)
 });
 
 function follow(){
     let url ='http://localhost:8080/subscribeToCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
-    console.log(url)
     event.preventDefault()
-    const subscription ={ "userId" : get_user_id(),
-    "competitionId": comp_id}
+    const subscription ={
+        "userId" : get_user_id(),
+        "competitionId": comp_id}
     fetch(url, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(subscription)
     }).then((response) =>{
     })
+    updateSubscribe()
 }
+
+function unfollow(){
+    let url ='http://localhost:8080/unsubscribeFromCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
+    event.preventDefault()
+    const subscription ={ "userId" : get_user_id(),
+        "competitionId": comp_id}
+    fetch(url, {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(subscription)
+    }).then((response) =>{
+    })
+    updateSubscribe()
+}
+
+async function isSubscribed(){
+    let url = 'http://localhost:8080/allSubscribeCompetitions?userId=' + get_user_id()
+    let res = await fetch(url)
+    return res.json().then( function (data){
+        return data.map(({id}) => id).includes(comp_id)
+    })
+
+
+}
+updateSubscribe()
+function updateSubscribe(){
+    isSubscribed().then(value => {
+        const follow = document.getElementById('follow')
+        const unfollow = document.getElementById('unfollow')
+        if (value){
+            follow.style.display = 'none'
+            unfollow.style.display = 'block'
+        } else {
+            unfollow.style.display = 'none'
+            follow.style.display = 'block'
+        }
+    })
+}
+
+
+

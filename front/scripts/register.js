@@ -13,7 +13,6 @@ form.addEventListener('submit',function(event){
         'name' : user_name,
         'password' : password.hashCode(),
     }
-    console.log(JSON.stringify(user))
     postForm(user)
 })
 

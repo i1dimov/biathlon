@@ -4,7 +4,7 @@
     <title>Profile</title>
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
     <link href="../styles/profile.css" type="text/css" rel="stylesheet">
-    <script src="../scripts/profile.js"></script>
+
 </head>
 
 <header>
@@ -36,12 +36,25 @@
 <body>
     <div class="info">
         <p id="profile_login"><span>Login: </span></p>
-        <button><span>Change password</span></button>
-        <button onclick=logout()><span>Logout</span></button>
+        <input id="new_password" type="password" placeholder="Новый пароль">
+        <button id="change_password" onclick="change_password()"><span>Сменить пароль</span></button>
+        <button onclick="logout()"><span>Выйти</span></button>
     </div>
     <!-- Подписки -->
     <div class="table_container">
-        <h1><span>Подписки</span></h1>
+        <table id="subscription_table">
+            <div>
+                <h1>Подписки</h1>
+                <tr class="bg-info">
+                    <th>ID</th>
+                    <th>Соревнование</th>
+                    <th>Место</th>
+                    <th>Дата</th>
+                </tr>
+                <tbody id="CalendarTable">
+                </tbody>
+            </div>
+        </table>
     </div>
 
     <table>
@@ -61,5 +74,6 @@
 
 <script src="../scripts/login_handler.js"></script>
 <script src ="../index.js"></script>
+<script src="../scripts/profile.js"></script>
 
 </html>

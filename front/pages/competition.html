@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="../styles/index.css" type="text/css" rel="stylesheet">
     <link href="../styles/competition.css" type="text/css" rel="stylesheet">
-    <script src="../scripts/competition.js"></script>
+
 </head>
 
 <header>
@@ -42,7 +42,20 @@
         <p id="location"><span class="label">Место проведения: </span></p>
         <p id="about"><span class="label">About: </span></p>
     </div>
-    <button id="follow" onclick=follow()>Follow</button>
+    <button id="follow" onclick="follow()">Follow</button>
+    <button id="unfollow" onclick="unfollow()">Unfollow</button>
+</div>
+
+<div class ="table_container">
+    <table class="sortable">
+            <tr class="bg-info">
+                <th>ID</th>
+                <th>Biathlete</th>
+                <th>Score</th>
+            </tr>
+            <tbody id="ResultsTable">
+            </tbody>
+    </table>
 </div>
 </body>
 
@@ -56,5 +69,6 @@
 </footer>
 
 <script src="../scripts/login_handler.js"></script>
+<script src="../scripts/competition.js"></script>
 <script src="../index.js"></script>
 </html>

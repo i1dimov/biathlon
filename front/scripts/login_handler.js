@@ -40,7 +40,3 @@ if(is_logged()){
         document.getElementById("follow").remove();
     }
 }
-
-function change_password(){
-
-}

@@ -46,5 +46,4 @@ function change_password(){
         headers: {"Content-Type": "application/json"},
     }).then((response) =>{
     })
-
 }

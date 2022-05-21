@@ -37,35 +37,13 @@
     <img id="u93_img" class="img" src="../images/biathletes/u93.svg"/>
     <form id="biathlete_form">
         <div class="inputs">
-            <input id="name" type="text" placeholder="Поиск биатлониста"/>
-            <div class="selects">
-                <div class="label-input">
-                    <p><span>Страна:</span></p>
-                    <label>
-                        <select id="nationality_select">
-                            <div id="nationality_div">
-                                <option class="nationality" value="All">All</option>
-                            </div>
-
-                        </select>
-                    </label>
-                </div>
-                <div class="label-input">
-                    <p><span>Пол:</span></p>
-                    <select id="gender">
-                        <option  value="Any">Any</option>
-                        <option  value="Men">Men</option>
-                        <option  value="Women">Women</option>
-                    </select>
-                </div>
-            </div>
-            <button value="submit"> Поиск </button>
+            <input id="name_input" type="text" placeholder="Поиск биатлониста" onkeyup="search()"/>
         </div>
     </form>
 
 
     <div class="table_container">
-        <table>
+        <table id="table">
             <div>
                 <tr>
                     <th>Id</th>
@@ -89,8 +67,8 @@
         <li>GitHub</li>
     </a>
 </footer>
-<script src="../scripts/nations.js"></script>
 <script src="../scripts/biathletes.js"></script>
 <script src="../scripts/login_handler.js"></script>
 <script src="../index.js"></script>
+<script src="../scripts/search.js"></script>
 </html>

@@ -14,7 +14,6 @@ function fillCompetitions(data) {
         const table = document.getElementById('CalendarTable');
         for (let i = 0; i < 10; i++) {
             let date = new Date(competitions[i].date);
-
             let row = `
             <tr>
             <td><a class="table_linker" onclick=passValue(${i},'competition') href="../pages/competition.html">${competitions[i].id}</a></td>

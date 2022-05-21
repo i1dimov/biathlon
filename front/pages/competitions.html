@@ -42,37 +42,14 @@
 
     <div class="inputs">
         <form id="competition_form" class="competition_form">
-            <input type="text" id="name" placeholder="Search for Competition"/>
-            <div class="selects">
-                <div class="label-input">
-                    <p><span>Season:</span></p>
-                    <select class="season" id="season">
-                        <option value="Any">Any</option>
-                        <option value="2011">2011</option>
-                        <option value="2012">2012</option>
-                        <option value="2013">2013</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                    </select>
-                </div>
+            <input type="text" id="name_input" placeholder="Search for Competition" onkeyup="search()"/>
 
-                <div class="label-input">
-                    <p><span>Type:</span></p>
-                    <select class="athletes" id="type">
-                        <option value="Any">Any</option>
-                        <option value="Men">Men</option>
-                        <option value="Women">Women</option>
-                        <option value="Team start">Team start</option>
-                    </select>
-                </div>
-            </div>
-            <button> Search </button>
         </form>
 
     </div>
 
     <div class="table_container">
-        <table>
+        <table id="table">
             <div>
                 <tr class="bg-info">
                     <th>Id</th>
@@ -99,4 +76,6 @@
 
 <script src="../scripts/login_handler.js"></script>
 <script src="../index.js"></script>
+<script src="../scripts/search.js"></script>
+<script src="../scripts/competitions.js"></script>
 </html>

@@ -6,6 +6,7 @@
 * Ссылка на [доску заданий Jira Board](https://biathlon1.atlassian.net/jira/software/projects/BIAT/boards/1/).
 * Ссылка на [блок-схему страниц сайта Miro Board](https://miro.com/app/board/uXjVOL1FNaA=/).
 * Ссылка на [Курсовой проект](https://disk.yandex.ru/i/nHk8HoH_XwSoFA).
+* Ссылка на [видео по проекту](https://cloud.mail.ru/public/CkFn/6FjxQQwaq)
 
 ## Авторы проекта
 * Сергей Синяков (1103cc@mail.ru)

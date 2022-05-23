@@ -29,7 +29,7 @@ res.then(function(response) {
                 </tr>
             `).join('\n')
         table.innerHTML += table_element;
-        String(comp_id = Number(comp_id) + 1)
+    String(comp_id = Number(comp_id) + 1)
 });
 
 function follow(){
@@ -61,15 +61,14 @@ async function isSubscribed(){
     return res.json().then( function (data){
         return data.map(({id}) => id).includes(comp_id)
     })
-
 }
+
 updateSubscribe()
 function updateSubscribe(){
     isSubscribed().then(value => {
         const follow = document.getElementById('follow')
         const unfollow = document.getElementById('unfollow')
         if (value){
-            console.log('change to unfollow')
             follow.style.display = 'none'
             unfollow.style.display = 'block'
         } else {

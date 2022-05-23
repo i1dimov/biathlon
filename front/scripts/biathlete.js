@@ -25,6 +25,7 @@ res.then(function(response) {
     bday_html.innerText += (bday.getDate() + "." + bday.getMonth()+1 + "." + bday.getFullYear());
     const gender_html = document.getElementById('gender');
     gender_html.innerText += gender;
+    String(biat_id = Number(biat_id) + 1)
 });
 
 function follow(){
@@ -34,6 +35,7 @@ function follow(){
         method: 'POST',
         headers: {"Content-Type": "application/json"},
     }).then((response) =>{
+        updateSubscribe()
     })
 }
 
@@ -44,5 +46,31 @@ function unfollow(){
         method: 'POST',
         headers: {"Content-Type": "application/json"},
     }).then((response) =>{
+        updateSubscribe()
     })
+}
+
+updateSubscribe()
+function updateSubscribe(){
+    isSubscribed().then(value => {
+        const follow = document.getElementById('follow')
+        const unfollow = document.getElementById('unfollow')
+        if (value){
+            follow.style.display = 'none'
+            unfollow.style.display = 'block'
+        } else {
+            unfollow.style.display = 'none'
+            follow.style.display = 'block'
+        }
+    })
+}
+
+async function isSubscribed(){
+    if(get_user_id()){
+        let url = 'http://localhost:8080/allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()
+        let res = await fetch(url)
+        return res.json().then( function (data){
+            return data.find(({competitionResults}) => competitionResults.find(({id}) => id.biathleteId === biat_id))
+        })
+    }
 }

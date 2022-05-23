@@ -4,21 +4,38 @@ res.then(function(response) {
     return response.json();
 }).then(function (data) {
     const table = document.getElementById('BiathletesTable');
+    let biathletes = sort_data(data);
 
-    for(let i = 0; i < Object.keys(data).length; i++) {
+    for(let i = 0; i < Object.keys(biathletes).length; i++) {
         let row = `
         <tr>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},"biathlete) href="../pages/biathlete.html">${data[i].id}</a></td>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},"biathlete") href="../pages/biathlete.html">${data[i].name + " " +data[i].secondName}<a/></td>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},"biathlete") href="../pages/biathlete.html">${data[i].nationality}</a></td>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},"biathlete") href="../pages/biathlete.html">${data[i].gender}</a></td>
+        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].score}</a></td>
+        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].name}<a/></td>
+        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].nationality}</a></td>
+        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].gender}</a></td>
         </tr>
         `
         table.innerHTML += row;
     }
 });
 
-const nations_options = document.getElementById('nationality_select')
-let nations = getNations();
-let options = nations.map(nation =>`<option> ${nation} </option>`).join('\n')
-nations_options.innerHTML += options;
+function sort_data(data){
+    let biathletes = [];
+    let biathlete;
+    for (let i = 0; i < Object.keys(data).length; i++) {
+        let biathlete_score = 0;
+        if (data[i].competitionResults[0]) {
+            biathlete_score = data[i].competitionResults[0].score;
+        }
+
+        biathletes.push(biathlete = {
+            "id": data[i].id,
+            "name": data[i].name + " " + data[i].secondName,
+            "score": biathlete_score,
+            "nationality": data[i].nationality,
+            "gender": data[i].gender,
+
+        })
+    }
+    return biathletes.sort((a,b) => b.score - a.score)
+}

@@ -16,7 +16,7 @@ res.then(function(response) {
     let gender = data[biat_id].gender;
 
     const id_html = document.getElementById("id");
-    id_html.innerText += Number(biat_id) + 1;
+    id_html.innerText += localStorage.getItem('biathleteScore');
     const name_html = document.getElementById('name');
     name_html.innerHTML = name;
     const nationality_html = document.getElementById('nationality');

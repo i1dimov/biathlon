@@ -1,10 +1,11 @@
 //Passing id value for competition and biathlete pages
-function passValue(id,type){
+function passValue(id, type, score){
     if (type === "competition"){
         localStorage.setItem("competitionId",id-1);
     }
     if (type === "biathlete"){
         localStorage.setItem("biathleteId",id-1)
+        localStorage.setItem("biathleteScore",score)
     }
 }
 

@@ -33,3 +33,10 @@ button:hover {
 .form_container{
     margin-top: -50px;
 }
+
+input{
+    width: 35%;
+}
+
+.table_container{
+}

@@ -1,5 +1,4 @@
 const requestURL = requestUrl_from_cfg + 'login'
-
 const form = document.getElementById('login_form');
 
 form.addEventListener('submit',function(event){
@@ -24,5 +23,5 @@ function postForm(user){
                 login(data);
         })
     })
-    location.assign('index.html')
+    location.assign('../pages/index.html')
 }

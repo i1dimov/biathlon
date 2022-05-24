@@ -1,5 +1,4 @@
 function login(data){
-    console.log(JSON.parse(data).id)
     sessionStorage.setItem("user_id",JSON.parse(data).id)
     sessionStorage.setItem("user_login",JSON.parse(data).login)
 }
@@ -7,7 +6,7 @@ function login(data){
 function logout(){
     sessionStorage.removeItem("user_id")
     sessionStorage.removeItem("user_login")
-    location.assign('index.html')
+    location.assign('../pages/index.html')
 }
 
 function is_logged(){
@@ -21,7 +20,7 @@ function get_user_id(){
 //If logged in
 if(is_logged()){
     //editing header
-    document.getElementById("login_link").href = "profile.html";
+    document.getElementById("login_link").href = "../pages/profile.html";
     document.getElementById("login_text").innerHTML = "Профиль";
 
     //editing login in profile
@@ -31,7 +30,7 @@ if(is_logged()){
     //Not logged
 } else {
     //editing header
-    document.getElementById("login_link").href = "login.html";
+    document.getElementById("login_link").href = "../pages/login.html";
     document.getElementById("login_text").innerHTML = "Войти / Зарегистрироваться";
 
     //removing follow button on competition and biathlete pages

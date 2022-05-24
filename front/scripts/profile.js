@@ -1,5 +1,5 @@
 if(!sessionStorage.getItem("user_id")){
-    location.assign("index.html")
+    location.assign("../pages/index.html")
 }
 
 const requestCompetitions = requestUrl_from_cfg + 'allSubscribeCompetitions?userId=' + get_user_id()
@@ -12,13 +12,13 @@ function fillCompetitions(data) {
     let competitions = data;
     if(competitions){
         const table = document.getElementById('CalendarTable');
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < Object.keys(competitions).length; i++) {
             let date = new Date(competitions[i].date);
             let row = `
             <tr>
-            <td><a class="table_linker" onclick=passValue(${(+competitions[i].id)-1},'competition') href="../pages/competition.html">${competitions[i].name}</a></td>
-            <td><a class="table_linker" onclick=passValue(${(+competitions[i].id)-1},'competition') href="../pages/competition.html">${competitions[i].location}</a></td>
-            <td><a class="table_linker" onclick=passValue(${(+competitions[i].id)-1},'competition') href="../pages/competition.html">${date.getDate() + "." +  (+date.getMonth() + 1)  + "." + date.getFullYear()}</a></td>
+            <td><a class="table_linker" onclick=passValue(${(competitions[i].id)},'competition') href="../pages/competition.html">${competitions[i].name}</a></td>
+            <td><a class="table_linker" onclick=passValue(${(competitions[i].id)},'competition') href="../pages/competition.html">${competitions[i].location}</a></td>
+            <td><a class="table_linker" onclick=passValue(${(competitions[i].id)},'competition') href="../pages/competition.html">${date.getDate() + "." +  (+date.getMonth() + 1)  + "." + date.getFullYear()}</a></td>
             </tr>
             `
             table.innerHTML += row;

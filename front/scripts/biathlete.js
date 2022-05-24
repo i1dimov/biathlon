@@ -27,7 +27,7 @@ res.then(function(response) {
 });
 
 function follow(){
-    let url ='http://localhost:8080/subscribeToBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
+    let url = requestURL + '/subscribeToBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
     event.preventDefault()
     fetch(url, {
         method: 'POST',
@@ -38,7 +38,7 @@ function follow(){
 }
 
 function unfollow(){
-    let url ='http://localhost:8080/unsubscribeFromBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
+    let url = requestURL + '/unsubscribeFromBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
     event.preventDefault()
     fetch(url, {
         method: 'POST',

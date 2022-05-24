@@ -14,7 +14,7 @@ public class BiathleteController {
 
     private final BiathleteService biathleteService;
 
-    @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
+    @CrossOrigin()//для фронта в идеи
     @GetMapping("/biathlete")
     @Operation(
             summary ="Просмотр биатлониста",
@@ -24,7 +24,7 @@ public class BiathleteController {
         return ResponseEntity.ok(biathleteService.getBiathleteById(id));
     }
 
-    @CrossOrigin(origins = "http://localhost:63342")//для фронта в идеи
+    @CrossOrigin()//для фронта в идеи
     @GetMapping("/biathletes")
     @Operation(
             summary ="Просмотр всех биатлонистов",

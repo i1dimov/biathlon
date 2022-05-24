@@ -121,7 +121,6 @@ li{
     list-style-type: none;
 }
 
-
 header a{
     cursor: pointer;
     outline: none;
@@ -132,6 +131,3 @@ header a{
 button{
     cursor: pointer;
 }
-
-
-

@@ -11,10 +11,8 @@ res.then(function(response) {
     //FLAG
     const flag = document.getElementById("flag");
     flag.src += "" + nationality + ".png"
-
     bday = new Date(data[biat_id].birthDate)
     let gender = data[biat_id].gender;
-
     const id_html = document.getElementById("id");
     id_html.innerText += localStorage.getItem('biathleteScore');
     const name_html = document.getElementById('name');

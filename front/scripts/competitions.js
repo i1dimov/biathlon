@@ -1,4 +1,4 @@
-const URL = 'http://localhost:8080/competitions'
+const URL = requestUrl_from_cfg + 'competitions'
 res = fetch(URL)
 res.then(function(response) {
     return response.json();

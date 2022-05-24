@@ -1,5 +1,5 @@
 let comp_id = localStorage.getItem("competitionId");
-const requestURL = 'http://localhost:8080/competitions'
+const requestURL = requestUrl_from_cfg + 'competitions'
 res = fetch(requestURL)
 
 res.then(function(response) {
@@ -34,7 +34,7 @@ res.then(function(response) {
 
 function follow(){
     console.log('follow')
-    let url ='http://localhost:8080/subscribeToCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
+    let url = requestUrl_from_cfg + 'subscribeToCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
     event.preventDefault()
     fetch(url, {
         method: 'POST',
@@ -45,7 +45,7 @@ function follow(){
 }
 
 function unfollow(){
-    let url ='http://localhost:8080/unsubscribeFromCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
+    let url = requestUrl_from_cfg + 'unsubscribeFromCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
     event.preventDefault()
     fetch(url, {
         method: 'POST',
@@ -56,7 +56,7 @@ function unfollow(){
 }
 
 async function isSubscribed(){
-    let url = 'http://localhost:8080/allSubscribeCompetitions?userId=' + get_user_id()
+    let url = requestUrl_from_cfg + 'allSubscribeCompetitions?userId=' + get_user_id()
     let res = await fetch(url)
     return res.json().then( function (data){
         return data.map(({id}) => id).includes(comp_id)

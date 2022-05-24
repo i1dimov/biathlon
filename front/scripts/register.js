@@ -1,4 +1,4 @@
-const requestURL = 'http://localhost:8080/register'
+const requestURL = requestUrl_from_cfg + 'register'
 
 const form = document.getElementById('register_form');
 

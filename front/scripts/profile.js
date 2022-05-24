@@ -2,8 +2,8 @@ if(!sessionStorage.getItem("user_id")){
     location.assign("index.html")
 }
 
-const requestCompetitions = 'http://localhost:8080/allSubscribeCompetitions?userId=' + get_user_id()
-const requestBiathletes = 'http://localhost:8080/allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()
+const requestCompetitions = requestUrl_from_cfg + 'allSubscribeCompetitions?userId=' + get_user_id()
+const requestBiathletes = requestUrl_from_cfg + 'allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()
 
 getData(requestCompetitions)
 getData(requestBiathletes)
@@ -38,7 +38,7 @@ function getData(url){
 
 function change_password(){
     const input = document.getElementById('new_password').value;
-    const url ='http://localhost:8080/changePassword?userId='+ get_user_id() +'&newPassword=' + input.hashCode()
+    const url = requestUrl_from_cfg + 'changePassword?userId='+ get_user_id() +'&newPassword=' + input.hashCode()
     fetch(url, {
         method: 'POST',
         headers: {"Content-Type": "application/json"},

@@ -1,4 +1,4 @@
-const requestURL = 'http://localhost:8080/login'
+const requestURL = requestUrl_from_cfg + 'login'
 
 const form = document.getElementById('login_form');
 

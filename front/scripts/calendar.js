@@ -1,8 +1,8 @@
 if(!is_logged()){
     document.getElementById("subscribe_table").remove()
 } else {
-    const requestCompetitions = 'http://localhost:8080/allSubscribeCompetitions?userId=' + get_user_id()
-    const requestBiathletes = 'http://localhost:8080/allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()
+    const requestCompetitions = requestUrl_from_cfg + 'allSubscribeCompetitions?userId=' + get_user_id()
+    const requestBiathletes = requestUrl_from_cfg + 'allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()
 
     getData(requestCompetitions)
     getData(requestBiathletes)

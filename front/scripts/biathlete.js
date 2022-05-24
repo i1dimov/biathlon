@@ -1,5 +1,5 @@
 let biat_id = localStorage.getItem('biathleteId');
-const requestURL = 'http://localhost:8080/biathletes'
+const requestURL = requestUrl_from_cfg + 'biathletes'
 res = fetch(requestURL)
 
 res.then(function(response) {

@@ -25,6 +25,7 @@ if(is_logged()){
     document.getElementById("login_link").href = "../pages/profile.html";
     document.getElementById("login_text").innerHTML = "Профиль";
 
+
     //editing login in profile
     if(document.getElementById("profile_login")){
         document.getElementById("profile_login").innerHTML = "Ваше имя: " + sessionStorage.getItem("user_name");
@@ -34,9 +35,5 @@ if(is_logged()){
     //editing header
     document.getElementById("login_link").href = "../pages/login.html";
     document.getElementById("login_text").innerHTML = "Войти / Зарегистрироваться";
-
-    //removing follow button on competition and biathlete pages
-    if(document.getElementById("follow")){
-        document.getElementById("follow").remove();
-    }
+    document.getElementById("calendar_text").remove();
 }

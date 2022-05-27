@@ -1,4 +1,6 @@
 function login(data){
+    console.log("HELLO")
+    console.log(data)
     sessionStorage.setItem("user_id",JSON.parse(data).id)
     sessionStorage.setItem("user_name",JSON.parse(data).name)
     sessionStorage.setItem("user_token",(JSON.parse(data).name + JSON.parse(data).login).hashCode())

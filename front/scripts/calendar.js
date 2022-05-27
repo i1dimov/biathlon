@@ -1,5 +1,5 @@
 if(!is_logged()){
-    document.getElementById("subscribe_table").remove()
+    location.assign("../pages/index.html")
 } else {
     const requestCompetitions = requestUrl_from_cfg + 'allSubscribeCompetitions?userId=' + get_user_id()
     const requestBiathletes = requestUrl_from_cfg + 'allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()

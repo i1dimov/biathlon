@@ -4,11 +4,11 @@ res = fetch(requestURL)
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
-    let name = data[comp_id].name;
-    let date = new Date(data[comp_id].date);
-    let location = data[comp_id].location;
-    let competitionResults = data[comp_id].competitionResults;
-    let about = data[comp_id].about;
+    let name = data[Number(comp_id) - 1].name;
+    let date = new Date(data[Number(comp_id) - 1].date);
+    let location = data[Number(comp_id) - 1].location;
+    let competitionResults = data[Number(comp_id) - 1].competitionResults;
+    let about = data[Number(comp_id) - 1].about;
 
     const name_html = document.getElementById('name');
     name_html.innerHTML += name;
@@ -18,21 +18,20 @@ res.then(function(response) {
     location_html.innerHTML += location;
     const about_html = document.getElementById('about');
     about_html.innerHTML += about;
-
+    let index = 1;
     const table =  document.getElementById('ResultsTable')
-        let table_element = competitionResults.sort((a,b) => b.score - a.score).map(competitionRes =>`
+        let table_element = competitionResults.sort((a,b) => b.score - a.score).map(competitionRes =>
+            `
                 <tr>
-                <td>${competitionRes.id.biathleteId}</td>
-                <td>${competitionRes.biathleteName}</td>
-                <td>${competitionRes.score}</td>
+                <td><a class="table_linker" onclick=passValue(${competitionRes.id.biathleteId},'biathlete',${competitionRes.score}) href="../pages/biathlete.html">${index++}<a/></td>
+                <td><a class="table_linker" onclick=passValue(${competitionRes.id.biathleteId},'biathlete',${competitionRes.score}) href="../pages/biathlete.html">${competitionRes.biathleteName}<a/></td>
+                <td><a class="table_linker" onclick=passValue(${competitionRes.id.biathleteId},'biathlete',${competitionRes.score}) href="../pages/biathlete.html">${competitionRes.score}</a></td>
                 </tr>
             `).join('\n')
         table.innerHTML += table_element;
-    String(comp_id = Number(comp_id) + 1)
 });
 
 function follow(){
-    console.log('follow')
     let url = requestUrl_from_cfg + 'subscribeToCompetition?' + 'userId=' + get_user_id() + '&' + 'competitionId=' + comp_id
     event.preventDefault()
     fetch(url, {
@@ -58,7 +57,7 @@ async function isSubscribed(){
     let url = requestUrl_from_cfg + 'allSubscribeCompetitions?userId=' + get_user_id()
     let res = await fetch(url)
     return res.json().then( function (data){
-        return data.map(({id}) => id).includes(comp_id)
+        return data.map(({id}) => id).includes(Number(comp_id))
     })
 }
 

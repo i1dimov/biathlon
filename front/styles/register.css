@@ -43,3 +43,7 @@ button:hover {
 p {
     margin: 10px;
 }
+
+footer{
+    position: absolute;
+}

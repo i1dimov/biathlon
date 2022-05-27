@@ -40,3 +40,7 @@ input{
 
 .table_container{
 }
+
+footer{
+    position: absolute;
+}

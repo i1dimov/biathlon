@@ -13,6 +13,7 @@ res.then(function(response) {
     flag.src += "" + nationality + ".png"
     bday = new Date(data[biat_id].birthDate)
     let gender = data[biat_id].gender;
+    document.getElementById("score").innerText += data[biat_id].scoreInLastSeason;
     const id_html = document.getElementById("id");
     id_html.innerText += localStorage.getItem('biathleteScore');
     const name_html = document.getElementById('name');
@@ -20,14 +21,14 @@ res.then(function(response) {
     const nationality_html = document.getElementById('nationality');
     nationality_html.innerText += nationality;
     const bday_html = document.getElementById('bday');
-    bday_html.innerText += (bday.getDate() + "." + bday.getMonth()+1 + "." + bday.getFullYear());
+    bday_html.innerText += (bday.getDate() + "." + String(Number (bday.getMonth())+1) + "." + bday.getFullYear());
     const gender_html = document.getElementById('gender');
     gender_html.innerText += gender;
     String(biat_id = Number(biat_id) + 1)
 });
 
 function follow(){
-    let url = requestURL + '/subscribeToBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
+    let url = requestUrl_from_cfg + 'subscribeToBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
     event.preventDefault()
     fetch(url, {
         method: 'POST',
@@ -38,7 +39,7 @@ function follow(){
 }
 
 function unfollow(){
-    let url = requestURL + '/unsubscribeFromBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
+    let url = requestUrl_from_cfg + 'unsubscribeFromBiathlete' + '?userId=' + get_user_id() + '&biathleteId=' + biat_id
     event.preventDefault()
     fetch(url, {
         method: 'POST',

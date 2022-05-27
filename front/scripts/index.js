@@ -3,17 +3,32 @@ res = fetch(requestURL)
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
+    let length = 9;
+    if (window.location.pathname === "/biathlon/front/pages/competitions.html") length = Object.keys(data).length
+
     const table = document.getElementById('CompetitionsTable');
-    for(let i = 0; i < Object.keys(data).length; i++) {
-        let date = new Date(data[i].date);
-        let row = `
+    let competitions = []
+    let date;
+    for(let i = 0; i < length; i++) {
+        date = new Date(data[i].date);
+        competitions.push(
+            {
+                "id": data[i].id,
+                "name": data[i].name,
+                "location": data[i].location,
+                "date": date.getTime()
+            })
+    }
+    competitions.sort((a,b) => b.date - a.date).map(competition =>
+        table.innerHTML +=
+            `
         <tr>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},'competition') href="../pages/competition.html">${data[i].id}</a></td>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},'competition') href="../pages/competition.html">${data[i].name}</a></td>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},'competition') href="../pages/competition.html">${data[i].location}</a></td>
-        <td><a class="table_linker" onclick=passValue(${data[i].id},'competition') href="../pages/competition.html">${date.getDate() + "." + (+date.getMonth() + 1) + "." + date.getFullYear()}</a></td>
+        <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">${competition.id}</a></td>
+        <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">${competition.name}</a></td>
+        <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">${competition.location}</a></td>
+        <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">
+        ${new Date(competition.date).getDate() + "." + (+new Date(competition.date).getMonth() + 1) + "." + new Date(competition.date).getFullYear()}</a></td>
         </tr>
         `
-        table.innerHTML += row;
-    }
+    )
 });

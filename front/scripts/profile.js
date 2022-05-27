@@ -1,4 +1,4 @@
-if(!sessionStorage.getItem("user_id")){
+if(!sessionStorage.getItem("user_token")){
     location.assign("../pages/index.html")
 }
 

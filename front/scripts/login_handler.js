@@ -1,16 +1,18 @@
 function login(data){
     sessionStorage.setItem("user_id",JSON.parse(data).id)
-    sessionStorage.setItem("user_login",JSON.parse(data).login)
+    sessionStorage.setItem("user_name",JSON.parse(data).name)
+    sessionStorage.setItem("user_token",(JSON.parse(data).name + JSON.parse(data).login).hashCode())
 }
 
 function logout(){
     sessionStorage.removeItem("user_id")
-    sessionStorage.removeItem("user_login")
+    sessionStorage.removeItem("user_name")
+    sessionStorage.removeItem("user_token")
     location.assign('../pages/index.html')
 }
 
 function is_logged(){
-    return sessionStorage.getItem("user_id");
+    return sessionStorage.getItem("user_token");
 }
 
 function get_user_id(){
@@ -25,7 +27,7 @@ if(is_logged()){
 
     //editing login in profile
     if(document.getElementById("profile_login")){
-        document.getElementById("profile_login").innerHTML = "Login: " + sessionStorage.getItem("user_login");
+        document.getElementById("profile_login").innerHTML = "Ваше имя: " + sessionStorage.getItem("user_name");
     }
     //Not logged
 } else {

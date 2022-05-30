@@ -9,6 +9,7 @@
 * Ссылка на [Курсовой проект](https://disk.yandex.ru/i/nHk8HoH_XwSoFA).
 * Ссылка на [видео по проекту](https://cloud.mail.ru/public/CkFn/6FjxQQwaq).
 * Ссылка на [swagger](http://92.63.193.94:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/).
+* Ссылка на [деплой](http://195.133.45.117/).
 
 ## Авторы проекта
 * Сергей Синяков (1103cc@mail.ru)

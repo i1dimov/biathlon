@@ -1,5 +1,4 @@
 function login(data){
-    console.log("HELLO")
     console.log(data)
     sessionStorage.setItem("user_id",JSON.parse(data).id)
     sessionStorage.setItem("user_name",JSON.parse(data).name)

@@ -19,11 +19,12 @@ res.then(function(response) {
     const name_html = document.getElementById('name');
     name_html.innerHTML = name;
     const nationality_html = document.getElementById('nationality');
-    nationality_html.innerText += nationality;
+    let nation = nationality.toLowerCase();
+    nationality_html.innerText += nation.toLowerCase().charAt(0).toUpperCase() + nation.slice(1);
     const bday_html = document.getElementById('bday');
     bday_html.innerText += (bday.getDate() + "." + String(Number (bday.getMonth())+1) + "." + bday.getFullYear());
     const gender_html = document.getElementById('gender');
-    gender_html.innerText += gender;
+    gender_html.innerText += gender.toLowerCase();
     String(biat_id = Number(biat_id) + 1)
 });
 

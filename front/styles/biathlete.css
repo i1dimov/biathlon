@@ -37,8 +37,7 @@ html {
 .label {
     display: inline;
     font-size: 24px;
-    font-weight: 700;
-    width: 160px;
+    width: 100%;
 }
 
 button {

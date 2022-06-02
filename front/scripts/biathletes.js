@@ -7,12 +7,13 @@ res.then(function(response) {
     let biathletes = sort_data(data);
 
     for(let i = 0; i < Object.keys(biathletes).length; i++) {
+        let nation = biathletes[i].nationality.toLowerCase();
         let row = `
         <tr>
         <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].score}</a></td>
         <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].name}<a/></td>
-        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].nationality}</a></td>
-        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].gender}</a></td>
+        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${nation.toLowerCase().charAt(0).toUpperCase() + nation.slice(1)}</a></td>
+        <td><a class="table_linker" onclick=passValue(${biathletes[i].id},"biathlete",${biathletes[i].score}) href="../pages/biathlete.html">${biathletes[i].gender.toLowerCase()}</a></td>
         </tr>
         `
         table.innerHTML += row;

@@ -1,5 +1,6 @@
 const requestURL = requestUrl_from_cfg + 'biathletes'
 res = fetch(requestURL)
+
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
@@ -28,7 +29,6 @@ function sort_data(data){
         if (data[i].competitionResults[0]) {
             biathlete_score = data[i].competitionResults[0].score;
         }
-
         biathletes.push(biathlete = {
             "id": data[i].id,
             "name": data[i].name + " " + data[i].secondName,

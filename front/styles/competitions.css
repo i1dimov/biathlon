@@ -12,6 +12,10 @@
     gap: 12px;
 }
 
+form{
+    width: 100%;
+}
+
 input, select{
     font-size: 16px;
     margin-top: 8px;

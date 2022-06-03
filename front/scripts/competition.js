@@ -4,20 +4,25 @@ res = fetch(requestURL)
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
-    let name = data[Number(comp_id) - 1].name;
-    let date = new Date(data[Number(comp_id) - 1].date);
-    let location = data[Number(comp_id) - 1].location;
-    let competitionResults = data[Number(comp_id) - 1].competitionResults;
-    let about = data[Number(comp_id) - 1].about;
 
+    let competitionResults = data[Number(comp_id) - 1].competitionResults;
+
+    let name = data[Number(comp_id) - 1].name;
     const name_html = document.getElementById('name');
     name_html.innerHTML += name;
+
+    let date = new Date(data[Number(comp_id) - 1].date);
     const date_html = document.getElementById('date');
     date_html.innerHTML += date.getDate() + "." + (+date.getMonth() + 1) + "." + date.getFullYear();
+
+    let location = data[Number(comp_id) - 1].location;
     const location_html = document.getElementById('location');
     location_html.innerHTML += location;
+
+    let about = data[Number(comp_id) - 1].about;
     const about_html = document.getElementById('about');
     about_html.innerHTML += about;
+
     let index = 1;
     const table =  document.getElementById('ResultsTable')
         let table_element = competitionResults.sort((a,b) => b.score - a.score).map(competitionRes =>

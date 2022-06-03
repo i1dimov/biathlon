@@ -5,7 +5,6 @@ res.then(function(response) {
 }).then(function (data) {
     let length = 9;
     if (window.location.pathname === "/biathlon/front/pages/competitions.html") length = Object.keys(data).length
-
     const table = document.getElementById('CompetitionsTable');
     let competitions = []
     let date;
@@ -23,7 +22,6 @@ res.then(function(response) {
         table.innerHTML +=
             `
         <tr>
-        <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">${competition.id}</a></td>
         <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">${competition.name}</a></td>
         <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">${competition.location}</a></td>
         <td><a class="table_linker" onclick=passValue(${competition.id},'competition') href="../pages/competition.html">

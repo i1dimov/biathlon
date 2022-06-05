@@ -1,12 +1,11 @@
-function search(){
+function search(index){
     let td,textValue,filter;
     let input = document.getElementById('name_input')
     let table = document.getElementById('table')
     let tr = table.getElementsByTagName('tr');
     filter = input.value.toUpperCase();
-
-    for(let i = 0; i<tr.length; i++){
-        td = tr[i].getElementsByTagName('td')[1]
+    for(let i = 0; i < tr.length; i++){
+        td = tr[i].getElementsByTagName('td')[index]
         if (td){
             textValue = td.textContent || td.innerText;
             if (textValue.toUpperCase().indexOf(filter) > -1){

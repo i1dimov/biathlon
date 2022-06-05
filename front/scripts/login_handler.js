@@ -13,11 +13,11 @@ function logout(){
 }
 
 function is_logged(){
-    return sessionStorage.getItem("user_token");
+    return validate_user(sessionStorage.getItem("user_token"));
 }
 
 function get_user_id(){
-    return sessionStorage.getItem("user_id")
+    return sessionStorage.getItem("user_id");
 }
 
 //If logged in
@@ -25,7 +25,6 @@ if(is_logged()){
     //editing header
     document.getElementById("login_link").href = "../pages/profile.html";
     document.getElementById("login_text").innerHTML = "Профиль";
-
 
     //editing login in profile
     if(document.getElementById("profile_login")){
@@ -38,3 +37,9 @@ if(is_logged()){
     document.getElementById("login_text").innerHTML = "Войти / Зарегистрироваться";
     document.getElementById("calendar_text").remove();
 }
+
+
+function validate_user(user_hash){
+    return user_hash;
+}
+

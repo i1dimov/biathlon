@@ -9,11 +9,12 @@ res.then(function(response) {
     return response.json();
 }).then(function (data) {
     let name = data.name + " " + data.secondName;
-    let nationality = data.nationality;
+    let nationality = data.nationality.toLowerCase();
+    let nation = nationality.toLowerCase().charAt(0).toUpperCase() + nationality.slice(1)
 
     //Флаг
     const flag = document.getElementById("flag");
-    flag.src += "" + nationality + ".png";
+    flag.src += "" + nation + ".png";
 
     //Дата рождения
     bday = new Date(data.birthDate)
@@ -36,8 +37,7 @@ res.then(function(response) {
 
     //Национальность
     const nationality_html = document.getElementById('nationality');
-    let nation = nationality.toLowerCase();
-    nationality_html.innerText += nation.toLowerCase().charAt(0).toUpperCase() + nation.slice(1);
+    nationality_html.innerText += nation;
 });
 
 function follow(){

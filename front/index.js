@@ -4,7 +4,7 @@ function passValue(id, type, score){
         localStorage.setItem("competitionId",id);
     }
     if (type === "biathlete"){
-        localStorage.setItem("biathleteId",String(Number(id) - 1))
+        localStorage.setItem("biathleteId",String(Number(id)))
         localStorage.setItem("biathleteScore",score)
     }
 }

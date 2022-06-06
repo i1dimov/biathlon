@@ -22,6 +22,14 @@ function postForm(user){
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(user)
     }).then((response) =>{
+        response.text()
+            .then(function(data){
+                if(data){
+                    location.assign('../pages/login.html')
+                } else {
+                    alert("Пользователь с таким логином уже существует")
+                }
+            })
     })
-    location.assign('../pages/login.html')
+
 }

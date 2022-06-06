@@ -20,8 +20,13 @@ function postForm(user){
     }).then(function(response){
         response.text()
             .then(function (data){
-                login(data);
+                if(data){
+                    login(data);
+                    location.assign('../pages/index.html')
+                } else {
+                    alert("Неверный логин или пароль")
+                }
+
         })
     })
-    location.assign('../pages/index.html')
 }

@@ -1,6 +1,6 @@
 //Получение ID выбранного биатлониста
 let biat_id = localStorage.getItem('biathleteId');
-const requestURL = requestUrl_from_cfg + 'biathletes'
+const requestURL = requestUrl_from_cfg + 'biathlete?id=' + biat_id
 
 //Запрос в бэк
 res = fetch(requestURL)
@@ -8,25 +8,25 @@ res = fetch(requestURL)
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
-    let name = data[biat_id].name + " " + data[biat_id].secondName;
-    let nationality = data[biat_id].nationality;
+    let name = data.name + " " + data.secondName;
+    let nationality = data.nationality;
 
     //Флаг
     const flag = document.getElementById("flag");
     flag.src += "" + nationality + ".png";
 
     //Дата рождения
-    bday = new Date(data[biat_id].birthDate)
+    bday = new Date(data.birthDate)
     const bday_html = document.getElementById('bday');
     bday_html.innerText += (bday.getDate() + "." + String(Number (bday.getMonth())+1) + "." + bday.getFullYear());
 
     //Пол
-    let gender = data[biat_id].gender;
+    let gender = data.gender;
     const gender_html = document.getElementById('gender');
     gender_html.innerText += gender.toLowerCase();
 
     //Очки в прошлом сезоне
-    document.getElementById("score").innerText += data[biat_id].scoreInLastSeason;
+    document.getElementById("score").innerText += data.scoreInLastSeason;
     const id_html = document.getElementById("id");
 
     //Очки в сумме
@@ -38,8 +38,6 @@ res.then(function(response) {
     const nationality_html = document.getElementById('nationality');
     let nation = nationality.toLowerCase();
     nationality_html.innerText += nation.toLowerCase().charAt(0).toUpperCase() + nation.slice(1);
-
-    String(biat_id = Number(biat_id) + 1)
 });
 
 function follow(){
@@ -88,3 +86,4 @@ async function isSubscribed(){
         })
     }
 }
+

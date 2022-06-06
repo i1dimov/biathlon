@@ -5,7 +5,7 @@ res = fetch(requestURL)
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
-    const length = window.location.pathname === "/biathlon/front/pages/competitions.html"?Object.keys(data).length : 9;
+    const length = window.location.pathname === "/pages/competitions.html"?Object.keys(data).length : 9;
     const table = document.getElementById('CompetitionsTable');
     let competitions = []
     let date;

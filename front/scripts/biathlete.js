@@ -79,7 +79,7 @@ function updateSubscribe(){
 
 async function isSubscribed(){
     if(get_user_id()){
-        let url = 'http://localhost:8080/allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()
+        let url = requestUrl_from_cfg + 'allSubscribeCompetitionsWithBiathletes?userId=' + get_user_id()
         let res = await fetch(url)
         return res.json().then( function (data){
             return data.find(({competitionResults}) => competitionResults.find(({id}) => id.biathleteId === biat_id))

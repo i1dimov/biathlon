@@ -5,12 +5,12 @@ res = fetch(requestURL)
 res.then(function(response) {
     return response.json();
 }).then(function (data) {
-    let length = 9;
-    if (window.location.pathname === "/biathlon/front/pages/competitions.html") length = Object.keys(data).length
+    const length = window.location.pathname === "/biathlon/front/pages/competitions.html"?Object.keys(data).length : 9;
     const table = document.getElementById('CompetitionsTable');
     let competitions = []
     let date;
-    for(let i = 0; i < length; i++) {
+
+    for(let i = 0; i < Object.keys(data).length; i++) {
         date = new Date(data[i].date);
         competitions.push(
             {
@@ -20,7 +20,8 @@ res.then(function(response) {
                 "date": date.getTime()
             })
     }
-    competitions.sort((a,b) => b.date - a.date).map(competition =>
+
+    competitions.sort((a,b) => b.date - a.date).slice(0,length+1).map(competition =>
         table.innerHTML +=
             `
         <tr>
